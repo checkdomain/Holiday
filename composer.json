@@ -1,0 +1,23 @@
+{
+    "name":         "checkdomain/holiday",
+    "description":  "Checkdomain/Holiday provides a simple class to get holidays for a specified country",
+    "keywords":     ["holiday"],
+    "type":         "library",
+    "license":      "MIT",
+    "authors": [
+        {
+            "name":     "Benjamin Paap",
+            "email":    "b.paap@checkdomain.de",
+            "homepage": "http://checkdomain.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "Checkdomain\\Holiday": "lib/" }
+    }
+}

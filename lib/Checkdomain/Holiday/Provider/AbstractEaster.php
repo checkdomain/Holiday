@@ -1,0 +1,47 @@
+<?php
+
+namespace Checkdomain\Holiday\Provider;
+
+/**
+ * Class Easter
+ */
+abstract class AbstractEaster extends AbstractProvider
+{
+
+    /**
+     * Returns all dates calculated by easter sunday
+     *
+     * @param int $year
+     *
+     * @return array
+     */
+    protected function getEasterDates($year)
+    {
+        $easterSunday = new \DateTime('@'.easter_date($year));
+        $easterSunday->setTimezone(new \DateTimeZone(ini_get('date.timezone')));
+
+        $easterMonday = clone $easterSunday;
+        $easterMonday->modify('+1 day');
+        $goodFriday = clone $easterSunday;
+        $goodFriday->modify('-2 days');
+        $ascensionDay = clone $easterSunday;
+        $ascensionDay->modify('+39 days');
+        $pentecostSunday = clone $easterSunday;
+        $pentecostSunday->modify('+49 days');
+        $pentecostMonday = clone $pentecostSunday;
+        $pentecostMonday->modify('+1 days');
+        $corpusChristi = clone $easterSunday;
+        $corpusChristi->modify('+60 days');
+
+        return array(
+            'easterSunday'    => $easterSunday,
+            'easterMonday'    => $easterMonday,
+            'goodFriday'      => $goodFriday,
+            'ascensionDay'    => $ascensionDay,
+            'pentecostSunday' => $pentecostSunday,
+            'pentecostMonday' => $pentecostMonday,
+            'corpusChristi'   => $corpusChristi
+        );
+    }
+
+}
