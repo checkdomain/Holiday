@@ -1,4 +1,4 @@
-README
+README [![Build Status](https://travis-ci.org/checkdomain/Holiday.png?branch=master)](https://travis-ci.org/checkdomain/Holiday)
 ======
 
 What is Checkdomain/Holiday
