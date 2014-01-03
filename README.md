@@ -7,7 +7,7 @@ Checkdomain/Holiday is a small library to check if a specified date is a holiday
 
 Requirements
 ------------
-Checkdomain/Holiday required php >= 5.3.
+Checkdomain/Holiday requires php >= 5.3.
 
 Installation
 ------------
