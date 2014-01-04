@@ -71,7 +71,11 @@ class UtilTest extends \PHPUnit_Framework_TestCase
                 'name' => 'Tag der Arbeit',
                 'national' => true
             ))),
-            array('02.01.2013', 'DE', array(false, null))
+            array('02.01.2013', 'DE', array(false, null)),
+            array('26.04.2038', 'DE', array(true, array(
+                'name' => 'Ostermontag',
+                'national' => true
+            )))
         );
     }
 
