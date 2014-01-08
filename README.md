@@ -34,9 +34,13 @@ $holiday = $util->getHoliday('01.01.2014', 'DE');
 
 If you just need to know if there is a holiday on your date there is a `isHoliday` method, too.
 
+If you need to know all holidays for a specific country you can instantiate one of the included providers yourself and call the `getHolidaysByYear` method. All providers must follow the `ProviderInterface` interface.
+
 Contributing
 ------------
 Checkdomain/Holiday is open source. If you use this library it would be great to get some support for currently not implemented countries which you are familiar with. Pull requests will be reviewed and merged fast.
+
+To create a new Provider please see the `ProviderInterface` interface.
 
 Running Tests
 -------------
