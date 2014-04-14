@@ -63,7 +63,7 @@ class Util
      * @param string           $iso
      * @param string           $state
      *
-     * @return Holiday|null
+     * @return bool
      */
     public function isHoliday($date = 'now', $iso = null, $state = null)
     {
