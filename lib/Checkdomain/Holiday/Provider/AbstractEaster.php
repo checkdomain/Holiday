@@ -23,6 +23,8 @@ abstract class AbstractEaster extends AbstractProvider
 
         $easterMonday = clone $easterSunday;
         $easterMonday->modify('+1 day');
+		$maundyThursday = clone $easterSunday;
+		$maundyThursday->modify('-3 days');
         $goodFriday = clone $easterSunday;
         $goodFriday->modify('-2 days');
         $ascensionDay = clone $easterSunday;
@@ -35,6 +37,7 @@ abstract class AbstractEaster extends AbstractProvider
         $corpusChristi->modify('+60 days');
 
         return array(
+			'maundyThursday'  => $maundyThursday,
             'easterSunday'    => $easterSunday,
             'easterMonday'    => $easterMonday,
             'goodFriday'      => $goodFriday,
