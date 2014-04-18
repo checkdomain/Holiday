@@ -1,11 +1,18 @@
 <?php
+/**
+ * Norwegian holiday provider
+ * 
+ * @author Kristian Lunde <kristian@klunde.net>
+ * @since 2014-04-18
+ */
 
 namespace Checkdomain\Holiday\Provider;
 
 /**
  * Class NO
  **/
-class NO extends AbstractEaster {
+class NO extends AbstractEaster 
+{
     /**
      * @param int $year
      *
@@ -15,7 +22,7 @@ class NO extends AbstractEaster {
     {
         $easter = $this->getEasterDates($year);
 
-        $holidays = array(
+        return array(
             '01-01' => $this->createData('1. nyttårsdag', true),
             '05-01' => $this->createData('1. mai', true),
             '05-17' => $this->createData('Grunnlovsdagen', true),
@@ -29,7 +36,5 @@ class NO extends AbstractEaster {
             $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag', true),
             $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. pinsedag', true),
 		);
-
-        return $holidays;
     }
 }

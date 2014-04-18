@@ -1,7 +1,11 @@
 <?php
-
+/**
+ * Norwegian holiday provider
+ * 
+ * @author Kristian Lunde <kristian@klunde.net>
+ * @since 2014-04-18
+ */
 namespace Checkdomain\Holiday\Provider;
-
 
 /**
  * Class NO
