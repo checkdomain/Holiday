@@ -1,18 +1,16 @@
 <?php
-/**
- * Norwegian holiday provider
- * 
- * @author Kristian Lunde <kristian@klunde.net>
- * @since 2014-04-18
- */
 
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class NO
+ * Norwegian holiday provider
+ *
+ * @author Kristian Lunde <kristian@klunde.net>
+ * @since 2014-04-18
  **/
-class NO extends AbstractEaster 
+class NO extends AbstractEaster
 {
+
     /**
      * @param int $year
      *

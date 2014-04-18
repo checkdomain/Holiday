@@ -1,14 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vincent
- * Date: 03/01/14
- * Time: 22:24
- */
 
 namespace Checkdomain\Holiday\Provider;
 
-
+/**
+ * French holiday provider
+ *
+ * @author Vincent Touzet <vincent.touzet@gmail.com>
+ * @since 2014-01-03
+ */
 class FR extends AbstractEaster
 {
 

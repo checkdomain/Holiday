@@ -3,7 +3,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class DE
+ * German holiday provider
+ *
+ * @author Benjamin Paap <benjamin.paap@gmail.com>
+ * @since 2014-01-02
  */
 class DE extends AbstractEaster
 {
