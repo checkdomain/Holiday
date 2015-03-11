@@ -32,7 +32,8 @@ class IT extends AbstractEaster
             '12-25' => $this->createData('Natale di Gesù', true),
             '12-26' => $this->createData('Santo Stefano', true),
             // Variable dates
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Lunedì di Pasqua', true)
+            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Pasqua', true),
+            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Lunedì di Pasqua', true),
         );
 
         return $holidays;
