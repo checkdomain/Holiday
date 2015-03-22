@@ -1,9 +1,9 @@
 <?php
 /**
- * Norwegian holiday provider
+ * Swedish holiday provider
  *
- * @author Kristian Lunde <kristian@klunde.net>
- * @since 2014-04-18
+ * @author Martin Lindhe
+ * @since 2015-03-22
  */
 namespace Checkdomain\Holiday\Provider;
 
