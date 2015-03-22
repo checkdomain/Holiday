@@ -26,9 +26,9 @@ class SE extends AbstractEaster
 
         return array(
             '01-01' => $this->createData('Nyårsdagen', true),
-            '01-05' => $this->createData('Trettondagsafton', true),
+            '01-05' => $this->createData('Trettondagsafton', true, array('halfday' => true)),
             '01-06' => $this->createData('Trettondedag jul', true),
-            '04-30' => $this->createData('Valborgsmässoafton', true, ['halfday' => true]),
+            '04-30' => $this->createData('Valborgsmässoafton', true, array('halfday' => true)),
             '05-01' => $this->createData('Första maj', true),
             '06-06' => $this->createData('Sveriges nationaldag', true),
             '12-24' => $this->createData('Julafton', true),
@@ -36,7 +36,7 @@ class SE extends AbstractEaster
             '12-26' => $this->createData('Annandag jul', true),
             '12-31' => $this->createData('Nyårsafton', true),
             // Variable dates
-            $easter['maundyThursday']->format(self::DATE_FORMAT) => $this->createData('Skärtorsdagen', true, ['halfday' => true]),
+            $easter['maundyThursday']->format(self::DATE_FORMAT) => $this->createData('Skärtorsdagen', true, array('halfday' => true)),
             $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Långfredagen', true),
             $easter['saturday']->format(self::DATE_FORMAT) => $this->createData('Påskafton', true),
             $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Påskdagen', true),
@@ -49,7 +49,7 @@ class SE extends AbstractEaster
             $midSummerDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Midsommarafton', true),
 
             $allSaintsDay->format(self::DATE_FORMAT) => $this->createData('Alla helgons dag', true),
-            $allSaintsDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Allhelgonaafton', true, ['halfday' => true])
+            $allSaintsDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Allhelgonaafton', true, array('halfday' => true))
         );
     }
 
