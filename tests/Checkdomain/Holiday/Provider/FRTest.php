@@ -39,11 +39,11 @@ class FRTest extends \PHPUnit_Framework_TestCase
             $this->assertNotNull($holiday, 'No Holiday found but assumed to find one on '.$date->format('Y-m-d'));
             $this->assertEquals($date->format('d.m.Y'), $holiday->getDate()->format('d.m.Y'));
 
-            foreach ($expectation as $property => $expectatedValue) {
+            foreach ($expectation as $property => $expectedValue) {
                 $method = 'get'.ucfirst($property);
                 $value = $holiday->$method();
 
-                $this->assertEquals($expectatedValue, $value);
+                $this->assertEquals($expectedValue, $value);
             }
         }
     }
