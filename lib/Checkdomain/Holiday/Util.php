@@ -67,14 +67,7 @@ class Util
      */
     public function isHoliday($date = 'now', $iso = null, $state = null)
     {
-        $iso = $this->getIsoCode($iso);
-        $date = $this->getDateTime($date);
-
-        $provider = $this->getProvider($iso);
-
-        $holiday = $provider->getHolidayByDate($date, $state);
-
-        return ($holiday !== null);
+        return ($this->getHoliday($date, $iso, $state) !== null);
     }
 
     /**
