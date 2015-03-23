@@ -12,7 +12,7 @@ interface ProviderInterface
      * @param \DateTime $date
      * @param string    $state
      *
-     * @return Holiday
+     * @return Model\Holiday
      */
     public function getHolidayByDate(\DateTime $date, $state = null);
 
