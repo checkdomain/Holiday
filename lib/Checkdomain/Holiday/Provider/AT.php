@@ -45,7 +45,6 @@ class AT extends AbstractEaster
             '12-26' => $this->createData('Stefanitag', true),
 
             // Variable dates
-            #$easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag', true),
             $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', true),
             $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag', true),
             $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt', true),
