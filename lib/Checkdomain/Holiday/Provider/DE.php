@@ -39,26 +39,26 @@ class DE extends AbstractEaster
 
         $holidays = array(
             // Fixed dates
-            '01-01' => $this->createData('Neujahr', true),
-            '05-01' => $this->createData('Tag der Arbeit', true),
-            '10-03' => $this->createData('Tag der Deutschen Einheit', true),
-            '12-25' => $this->createData('1. Weihnachtstag', true),
-            '12-26' => $this->createData('2. Weihnachtstag', true),
+            '01-01' => $this->createData('Neujahr'),
+            '05-01' => $this->createData('Tag der Arbeit'),
+            '10-03' => $this->createData('Tag der Deutschen Einheit'),
+            '12-25' => $this->createData('1. Weihnachtstag'),
+            '12-26' => $this->createData('2. Weihnachtstag'),
 
             // Fixed with states
-            '01-06' => $this->createData('Heilige Drei Könige', false, array(
+            '01-06' => $this->createData('Heilige Drei Könige', array(
                 self::STATE_BW,
                 self::STATE_BY,
                 self::STATE_ST,
             )),
-            '10-31' => $this->createData('Reformationstag', false, array(
+            '10-31' => $this->createData('Reformationstag', array(
                 self::STATE_BB,
                 self::STATE_MV,
                 self::STATE_SN,
                 self::STATE_ST,
                 self::STATE_TH,
             )),
-            '11-01' => $this->createData('Allerheiligen', false, array(
+            '11-01' => $this->createData('Allerheiligen', array(
                 self::STATE_BW,
                 self::STATE_BY,
                 self::STATE_NW,
@@ -67,14 +67,14 @@ class DE extends AbstractEaster
             )),
 
             // Variable dates
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag', true),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', true),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag', true),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt', true),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag', true),
+            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
+            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
+            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
+            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
+            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
 
             // Variable with states
-            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam', false, array(
+            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam', array(
                 self::STATE_BW,
                 self::STATE_BY,
                 self::STATE_HE,

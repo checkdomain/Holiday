@@ -64,17 +64,14 @@ class UtilTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('DE', '25.12.2013', array(true, array(
-                'name' => '1. Weihnachtstag',
-                'national' => true
+                'name' => '1. Weihnachtstag'
             ))),
             array('DE', '01.05.2013', array(true, array(
-                'name' => 'Tag der Arbeit',
-                'national' => true
+                'name' => 'Tag der Arbeit'
             ))),
             array('DE', '02.01.2013', array(false, null)),
             array('DE', '26.04.2038', array(true, array(
-                'name' => 'Ostermontag',
-                'national' => true
+                'name' => 'Ostermontag'
             )))
         );
     }

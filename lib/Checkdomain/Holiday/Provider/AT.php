@@ -34,22 +34,22 @@ class AT extends AbstractEaster
 
         $holidays = array(
             // Fixed dates
-            '01-01' => $this->createData('Neujahr', true),
-            '01-06' => $this->createData('Heilige Drei Könige', true),
-            '11-01' => $this->createData('Allerheiligen', true),
-            '08-15' => $this->createData('Mariä Himmelfahrt', true),
-            '05-01' => $this->createData('Staatsfeiertag', true),
-            '10-26' => $this->createData('Nationalfeiertag', true),
-            '12-08' => $this->createData('Mariä Empfängnis', true),
-            '12-25' => $this->createData('Weihnachten', true),
-            '12-26' => $this->createData('Stefanitag', true),
+            '01-01' => $this->createData('Neujahr'),
+            '01-06' => $this->createData('Heilige Drei Könige'),
+            '11-01' => $this->createData('Allerheiligen'),
+            '08-15' => $this->createData('Mariä Himmelfahrt'),
+            '05-01' => $this->createData('Staatsfeiertag'),
+            '10-26' => $this->createData('Nationalfeiertag'),
+            '12-08' => $this->createData('Mariä Empfängnis'),
+            '12-25' => $this->createData('Weihnachten'),
+            '12-26' => $this->createData('Stefanitag'),
 
             // Variable dates
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', true),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag', true),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt', true),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag', true),
-            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam', true),
+            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
+            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
+            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
+            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
+            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam'),
         );
 
         return $holidays;

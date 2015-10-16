@@ -49,7 +49,6 @@ abstract class AbstractProvider implements ProviderInterface
         $holiday = new Holiday(
             $data['name'],
             $date,
-            $data['national'],
             $data['states']
         );
 
@@ -77,16 +76,14 @@ abstract class AbstractProvider implements ProviderInterface
 
     /**
      * @param string $name
-     * @param bool   $national
      * @param array  $states
      *
      * @return array
      */
-    protected function createData($name, $national, array $states = null)
+    protected function createData($name, array $states = null)
     {
         return array(
             'name'     => $name,
-            'national' => $national,
             'states'   => $states
         );
     }

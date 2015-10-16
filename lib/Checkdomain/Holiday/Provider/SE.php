@@ -25,31 +25,31 @@ class SE extends AbstractEaster
         $allSaintsDay = $this->getAllSaintsDay($year);
 
         return array(
-            '01-01' => $this->createData('Nyårsdagen', true),
-            '01-05' => $this->createData('Trettondagsafton', true, array('halfday' => true)),
-            '01-06' => $this->createData('Trettondedag jul', true),
-            '04-30' => $this->createData('Valborgsmässoafton', true, array('halfday' => true)),
-            '05-01' => $this->createData('Första maj', true),
-            '06-06' => $this->createData('Sveriges nationaldag', true),
-            '12-24' => $this->createData('Julafton', true),
-            '12-25' => $this->createData('Juldagen', true),
-            '12-26' => $this->createData('Annandag jul', true),
-            '12-31' => $this->createData('Nyårsafton', true),
+            '01-01' => $this->createData('Nyårsdagen'),
+            '01-05' => $this->createData('Trettondagsafton', array('halfday' => true)),
+            '01-06' => $this->createData('Trettondedag jul'),
+            '04-30' => $this->createData('Valborgsmässoafton', array('halfday' => true)),
+            '05-01' => $this->createData('Första maj'),
+            '06-06' => $this->createData('Sveriges nationaldag'),
+            '12-24' => $this->createData('Julafton'),
+            '12-25' => $this->createData('Juldagen'),
+            '12-26' => $this->createData('Annandag jul'),
+            '12-31' => $this->createData('Nyårsafton'),
             // Variable dates
-            $easter['maundyThursday']->format(self::DATE_FORMAT) => $this->createData('Skärtorsdagen', true, array('halfday' => true)),
-            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Långfredagen', true),
-            $easter['saturday']->format(self::DATE_FORMAT) => $this->createData('Påskafton', true),
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Påskdagen', true),
-            $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Annandag påsk', true),
-            $easter['ascensionDay']->format(self::DATE_FORMAT) => $this->createData('Kristi himmelsfärdsdag', true),
-            $easter['pentecostSaturday']->format(self::DATE_FORMAT) => $this->createData('Pingstafton', true),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pingstdagen', true),
+            $easter['maundyThursday']->format(self::DATE_FORMAT) => $this->createData('Skärtorsdagen', array('halfday' => true)),
+            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Långfredagen'),
+            $easter['saturday']->format(self::DATE_FORMAT) => $this->createData('Påskafton'),
+            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Påskdagen'),
+            $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Annandag påsk'),
+            $easter['ascensionDay']->format(self::DATE_FORMAT) => $this->createData('Kristi himmelsfärdsdag'),
+            $easter['pentecostSaturday']->format(self::DATE_FORMAT) => $this->createData('Pingstafton'),
+            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pingstdagen'),
 
-            $midSummerDay->format(self::DATE_FORMAT) => $this->createData('Midsommardagen', true),
-            $midSummerDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Midsommarafton', true),
+            $midSummerDay->format(self::DATE_FORMAT) => $this->createData('Midsommardagen'),
+            $midSummerDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Midsommarafton'),
 
-            $allSaintsDay->format(self::DATE_FORMAT) => $this->createData('Alla helgons dag', true),
-            $allSaintsDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Allhelgonaafton', true, array('halfday' => true))
+            $allSaintsDay->format(self::DATE_FORMAT) => $this->createData('Alla helgons dag'),
+            $allSaintsDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Allhelgonaafton', array('halfday' => true))
         );
     }
 

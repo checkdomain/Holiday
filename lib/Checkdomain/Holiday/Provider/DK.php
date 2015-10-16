@@ -23,19 +23,19 @@ class DK extends AbstractEaster
         $greatPrayerDay->modify('+26 days');
 
         $holidays = array(
-            '01-01' => $this->createData('Nytår', true),
-            '12-25' => $this->createData('1. Juledag', true),
-            '12-26' => $this->createData('2. Juledag', true),
+            '01-01' => $this->createData('Nytår'),
+            '12-25' => $this->createData('1. Juledag'),
+            '12-26' => $this->createData('2. Juledag'),
 
             // Variable dates
-            $easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skærtorsdag', true),
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag', true),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Påskedag', true),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. Påskedag', true),
-            $greatPrayerDay->format(self::DATE_FORMAT)            => $this->createData('Store Bededag', true),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag', true),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pinsedag', true),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. Pinsedag', true)
+            $easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skærtorsdag'),
+            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag'),
+            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Påskedag'),
+            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. Påskedag'),
+            $greatPrayerDay->format(self::DATE_FORMAT)            => $this->createData('Store Bededag'),
+            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag'),
+            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pinsedag'),
+            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. Pinsedag')
         );
 
         return $holidays;

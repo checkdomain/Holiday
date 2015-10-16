@@ -19,11 +19,6 @@ class Holiday
     protected $date;
 
     /**
-     * @var bool
-     */
-    protected $national;
-
-    /**
      * @var array
      */
     protected $states;
@@ -33,14 +28,12 @@ class Holiday
      *
      * @param string    $name
      * @param \DateTime $date
-     * @param bool      $national
      * @param array     $states
      */
-    public function __construct($name = null, \DateTime $date = null, $national = null, array $states = null)
+    public function __construct($name = null, \DateTime $date = null, array $states = null)
     {
         $this->name     = $name;
         $this->date     = $date;
-        $this->national = $national;
         $this->states   = $states;
     }
 
@@ -82,26 +75,6 @@ class Holiday
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * @param boolean $national
-     *
-     * @return Holiday
-     */
-    public function setNational($national)
-    {
-        $this->national = $national;
-
-        return $this;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function getNational()
-    {
-        return $this->national;
     }
 
     /**

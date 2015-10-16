@@ -21,18 +21,18 @@ class NO extends AbstractEaster
         $easter = $this->getEasterDates($year);
 
         return array(
-            '01-01' => $this->createData('1. nyttårsdag', true),
-            '05-01' => $this->createData('1. mai', true),
-            '05-17' => $this->createData('Grunnlovsdagen', true),
-            '12-25' => $this->createData('1. juledag', true),
-            '12-26' => $this->createData('2. juledag', true),
+            '01-01' => $this->createData('1. nyttårsdag'),
+            '05-01' => $this->createData('1. mai'),
+            '05-17' => $this->createData('Grunnlovsdagen'),
+            '12-25' => $this->createData('1. juledag'),
+            '12-26' => $this->createData('2. juledag'),
             // Variable dates
-			$easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skjærtorsdag', true),
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag', true),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('1. påskedag', true),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. påskedag', true),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag', true),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. pinsedag', true),
+			$easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skjærtorsdag'),
+            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag'),
+            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('1. påskedag'),
+            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. påskedag'),
+            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag'),
+            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. pinsedag'),
 		);
     }
 }
