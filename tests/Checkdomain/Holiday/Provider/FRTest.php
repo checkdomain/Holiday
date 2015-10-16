@@ -5,7 +5,7 @@ namespace Checkdomain\Holiday\Provider;
 /**
  * Class FR
  */
-class FRTest extends \PHPUnit_Framework_TestCase
+class FRTest extends AbstractTest
 {
 
     /**

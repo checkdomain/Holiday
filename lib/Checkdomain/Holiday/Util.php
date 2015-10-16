@@ -20,7 +20,7 @@ class Util
     {
         $instance = null;
 
-        $class = '\\Checkdomain\\Holiday\\Provider\\'.$iso;
+        $class = '\\Checkdomain\\Holiday\\Provider\\' . $iso;
 
         if (class_exists($class)) {
             $instance = new $class;
@@ -59,27 +59,27 @@ class Util
      * This method can be used to check whether a specific date is a holiday
      * in a specified country and state
      *
-     * @param \DateTime|string $date
      * @param string           $iso
+     * @param \DateTime|string $date
      * @param string           $state
      *
      * @return bool
      */
-    public function isHoliday($date = 'now', $iso = null, $state = null)
+    public function isHoliday($iso, $date = 'now', $state = null)
     {
-        return ($this->getHoliday($date, $iso, $state) !== null);
+        return ($this->getHoliday($iso, $date, $state) !== null);
     }
 
     /**
      * Provides detailed information about a specific holiday
      *
-     * @param \DateTime|string $date
      * @param string           $iso
+     * @param \DateTime|string $date
      * @param string           $state
      *
      * @return Holiday|null
      */
-    public function getHoliday($date = 'now', $iso = null, $state = null)
+    public function getHoliday($iso, $date = 'now', $state = null)
     {
         $iso = $this->getIsoCode($iso);
         $date = $this->getDateTime($date);

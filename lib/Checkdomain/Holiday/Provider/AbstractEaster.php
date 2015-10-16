@@ -13,7 +13,7 @@ abstract class AbstractEaster extends AbstractProvider
      *
      * @param int $year
      *
-     * @return array
+     * @return \DateTime[]
      */
     protected function getEasterDates($year)
     {

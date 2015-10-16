@@ -19,29 +19,29 @@ class UtilTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string $date
      * @param string $iso
+     * @param string $date
      * @param array  $expectation
      *
      * @dataProvider providerHoliday
      */
-    public function testIsHoliday($date, $iso, array $expectation)
+    public function testIsHoliday($iso, $date, array $expectation)
     {
-        $isHoliday = $this->service->isHoliday($date, $iso);
+        $isHoliday = $this->service->isHoliday($iso, $date);
 
         $this->assertEquals($expectation[0], $isHoliday);
     }
 
     /**
-     * @param string $date
      * @param string $iso
+     * @param string $date
      * @param array  $expectation
      *
      * @dataProvider providerHoliday
      */
-    public function testGetHoliday($date, $iso, array $expectation)
+    public function testGetHoliday($iso, $date, array $expectation)
     {
-        $holiday = $this->service->getHoliday($date, $iso);
+        $holiday = $this->service->getHoliday($iso, $date);
 
         if ($expectation[1] === null) {
             $this->assertNull($holiday);
@@ -63,16 +63,16 @@ class UtilTest extends \PHPUnit_Framework_TestCase
     public function providerHoliday()
     {
         return array(
-            array('25.12.2013', 'DE', array(true, array(
+            array('DE', '25.12.2013', array(true, array(
                 'name' => '1. Weihnachtstag',
                 'national' => true
             ))),
-            array('01.05.2013', 'DE', array(true, array(
+            array('DE', '01.05.2013', array(true, array(
                 'name' => 'Tag der Arbeit',
                 'national' => true
             ))),
-            array('02.01.2013', 'DE', array(false, null)),
-            array('26.04.2038', 'DE', array(true, array(
+            array('DE', '02.01.2013', array(false, null)),
+            array('DE', '26.04.2038', array(true, array(
                 'name' => 'Ostermontag',
                 'national' => true
             )))

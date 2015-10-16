@@ -19,5 +19,8 @@
     },
     "autoload": {
         "psr-0": { "Checkdomain\\Holiday": "lib/" }
+    },
+    "autoload-dev": {
+        "psr-0": { "Checkdomain\\Holiday": "tests/" }
     }
 }
