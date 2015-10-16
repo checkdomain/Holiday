@@ -16,7 +16,7 @@ The easiest way to install this library is through [composer](http://getcomposer
 ```json
 {
    "require": {
-        "checkdomain/holiday": "dev-master"
+        "checkdomain/holiday": "~2.0.0"
     }
 }
 ```
@@ -29,7 +29,7 @@ To check for holidays just instantiate the Util class and call the `getHoliday` 
 
 ```php
 $util    = new \Checkdomain\Holiday\Util();
-$holiday = $util->getHoliday('01.01.2014', 'DE');
+$holiday = $util->getHoliday('DE', '01.01.2014');
 ```
 
 If you just need to know if there is a holiday on your date there is a `isHoliday` method, too.
