@@ -3,16 +3,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class DE
+ * Class ATTest
  */
 class ATTest extends AbstractTest
 {
-
-    /**
-     * @var \Checkdomain\Holiday\Provider\DE
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */

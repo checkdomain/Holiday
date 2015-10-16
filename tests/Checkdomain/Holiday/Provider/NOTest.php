@@ -8,16 +8,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class NO
+ * Class NOTest
  */
 class NOTest extends AbstractTest
 {
-
-    /**
-     * @var \Checkdomain\Holiday\Provider\NO
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */
@@ -90,5 +84,4 @@ class NOTest extends AbstractTest
 			array('26.12.2016', null, array('name' => '2. juledag')),
         );
     }
-
 }

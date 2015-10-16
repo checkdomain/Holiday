@@ -8,16 +8,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class IT
+ * Class ITTest
  */
 class ITTest extends AbstractTest
 {
-
-    /**
-     * @var \Checkdomain\Holiday\Provider\IT
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */
@@ -50,5 +44,4 @@ class ITTest extends AbstractTest
             array('15.08.2016', null, array('name' => 'Assunzione di Maria')),
         );
     }
-
 }

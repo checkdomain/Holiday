@@ -8,16 +8,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class SE
+ * Class SETest
  */
 class SETest extends AbstractTest
 {
-
-    /**
-     * @var \Checkdomain\Holiday\Provider\SE
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */
@@ -89,5 +83,4 @@ class SETest extends AbstractTest
             array('31.12.2015', null, array('name' => 'Nyårsafton')),
         );
     }
-
 }

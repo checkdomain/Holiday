@@ -3,7 +3,7 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class DK
+ * Class AbstractTest
  */
 abstract class AbstractTest extends \PHPUnit_Framework_TestCase
 {

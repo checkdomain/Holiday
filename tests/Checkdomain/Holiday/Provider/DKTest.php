@@ -3,15 +3,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class DE
+ * Class DKTest
  */
 class DKTest extends AbstractTest
 {
-    /**
-     * @var \Checkdomain\Holiday\Provider\DK
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */

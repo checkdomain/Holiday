@@ -3,16 +3,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class DE
+ * Class DETest
  */
 class DETest extends AbstractTest
 {
-
-    /**
-     * @var \Checkdomain\Holiday\Provider\DE
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */
@@ -39,5 +33,4 @@ class DETest extends AbstractTest
             array('01.11.2014', DE::STATE_SH, null),
         );
     }
-
 }

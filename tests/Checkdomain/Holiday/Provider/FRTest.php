@@ -3,16 +3,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class FR
+ * Class FRTest
  */
 class FRTest extends AbstractTest
 {
-
-    /**
-     * @var \Checkdomain\Holiday\Provider\DE
-     */
-    protected $provider;
-
     /**
      * {@inheritDoc}
      */
@@ -70,6 +64,4 @@ class FRTest extends AbstractTest
             array('25.12.2014', null, array('name' => 'Noël')),
         );
     }
-
-
 } 
