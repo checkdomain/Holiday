@@ -3,10 +3,20 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class Easter
+ * Class AbstractEaster
  */
 abstract class AbstractEaster extends AbstractProvider
 {
+    const MAUNDY_THURSDAY    = 'maundyThursday';
+    const EASTER_SUNDAY      = 'easterSunday';
+    const EASTER_MONDAY      = 'easterMonday';
+    const EASTER_SATURDAY    = 'easterSaturday';
+    const GOOD_FRIDAY        = 'goodFriday';
+    const ASCENSION_DAY      = 'ascensionDay';
+    const PENTECOST_SATURDAY = 'pentecostSaturday';
+    const PENTECOST_SUNDAY   = 'pentecostSunday';
+    const PENTECOST_MONDAY   = 'pentecostMonday';
+    const CORPUS_CHRISTI     = 'corpusChristi';
 
     /**
      * Returns all dates calculated by easter sunday
@@ -27,11 +37,10 @@ abstract class AbstractEaster extends AbstractProvider
         $maundyThursday->modify('-3 days');
         $goodFriday = clone $easterSunday;
         $goodFriday->modify('-2 days');
-        $saturday = clone $easterSunday;
-        $saturday->modify('-1 days');
+        $easterSaturday = clone $easterSunday;
+        $easterSaturday->modify('-1 days');
         $ascensionDay = clone $easterSunday;
         $ascensionDay->modify('+39 days');
-
 
         $pentecostSunday = clone $easterSunday;
         $pentecostSunday->modify('+49 days');
@@ -43,17 +52,16 @@ abstract class AbstractEaster extends AbstractProvider
         $corpusChristi->modify('+60 days');
 
         return array(
-            'maundyThursday'    => $maundyThursday,
-            'easterSunday'      => $easterSunday,
-            'easterMonday'      => $easterMonday,
-            'saturday'          => $saturday,
-            'goodFriday'        => $goodFriday,
-            'ascensionDay'      => $ascensionDay,
-            'pentecostSaturday' => $pentecostSaturday,
-            'pentecostSunday'   => $pentecostSunday,
-            'pentecostMonday'   => $pentecostMonday,
-            'corpusChristi'     => $corpusChristi
+            self::MAUNDY_THURSDAY    => $maundyThursday,
+            self::EASTER_SUNDAY      => $easterSunday,
+            self::EASTER_MONDAY      => $easterMonday,
+            self::EASTER_SATURDAY    => $easterSaturday,
+            self::GOOD_FRIDAY        => $goodFriday,
+            self::ASCENSION_DAY      => $ascensionDay,
+            self::PENTECOST_SATURDAY => $pentecostSaturday,
+            self::PENTECOST_SUNDAY   => $pentecostSunday,
+            self::PENTECOST_MONDAY   => $pentecostMonday,
+            self::CORPUS_CHRISTI     => $corpusChristi
         );
     }
-
 }

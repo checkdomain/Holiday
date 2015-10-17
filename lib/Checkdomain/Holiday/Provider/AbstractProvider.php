@@ -10,25 +10,39 @@ use Checkdomain\Holiday\ProviderInterface;
  */
 abstract class AbstractProvider implements ProviderInterface
 {
-
     const DATE_FORMAT = 'm-d';
 
     /**
-     * @param \DateTime $date
-     * @param string    $state
-     *
-     * @return Holiday
+     * @{@inheritdoc}
      */
-    public function getHolidayByDate(\DateTime $date, $state = null)
+    public function getHolidaysByYear($year, $state = null)
+    {
+        $holidays = array();
+
+        foreach ($this->getHolidaysDataByYear($year) as $date => $data) {
+            $holiday = $this->createModelFromData($data, new \DateTime($year . '-' . $date));
+
+            if ($state === null || $holiday->appliesToState($state)) {
+                $holidays[] = $holiday;
+            }
+        }
+
+        return $holidays;
+    }
+
+    /**
+     * @{@inheritdoc}
+     */
+    public function getHoliday(\DateTime $date, $state = null)
     {
         $day = $date->format(self::DATE_FORMAT);
 
-        $holidays = $this->getHolidaysByYear($date->format('Y'));
+        $holidays = $this->getHolidaysDataByYear($date->format('Y'));
 
         if (isset($holidays[$day])) {
             $holiday = $this->createModelFromData($holidays[$day], $date);
 
-            if (!$this->hasState($holiday, $state)) {
+            if ($state && false === $holiday->appliesToState($state)) {
                 $holiday = null;
             }
 
@@ -39,6 +53,22 @@ abstract class AbstractProvider implements ProviderInterface
     }
 
     /**
+     * @{@inheritdoc}
+     */
+    public function isHoliday(\DateTime $date, $state = null)
+    {
+        return null !== $this->getHoliday($date, $state);
+    }
+
+    /**
+     * @{@inheritdoc}
+     */
+    public function getHolidayByDate(\DateTime $date, $state = null)
+    {
+        return $this->getHoliday($date, $state);
+    }
+
+    /**
      * @param array     $data
      * @param \DateTime $date
      *
@@ -46,46 +76,30 @@ abstract class AbstractProvider implements ProviderInterface
      */
     protected function createModelFromData(array $data, \DateTime $date)
     {
-        $holiday = new Holiday(
-            $data['name'],
-            $date,
-            $data['states']
-        );
+        $holiday = new Holiday;
+
+        $holiday
+            ->setName($data['name'])
+            ->setDate($date)
+            ->setStates($data['states'])
+            ->setExcludedStates($data['excludedStates']);
 
         return $holiday;
     }
 
     /**
-     * @param Holiday $holiday
-     * @param string  $state
-     *
-     * @return bool
-     */
-    protected function hasState(Holiday $holiday, $state = null)
-    {
-        if ($state === null) {
-            return true;
-        }
-
-        if (is_array($holiday->getStates()) && in_array($state, $holiday->getStates())) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * @param string $name
-     * @param array  $states
+     * @param string     $name
+     * @param array|null $states
+     * @param array|null $excludedStates
      *
      * @return array
      */
-    protected function createData($name, array $states = null)
+    protected function createData($name, array $states = null, array $excludedStates = null)
     {
         return array(
-            'name'     => $name,
-            'states'   => $states
+            'name'           => $name,
+            'states'         => $states,
+            'excludedStates' => $excludedStates
         );
     }
-
 }

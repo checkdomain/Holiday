@@ -7,7 +7,6 @@ namespace Checkdomain\Holiday\Model;
  */
 class Holiday
 {
-
     /**
      * @var string
      */
@@ -19,23 +18,14 @@ class Holiday
     protected $date;
 
     /**
-     * @var array
+     * @var array|null
      */
     protected $states;
 
     /**
-     * Constructor
-     *
-     * @param string    $name
-     * @param \DateTime $date
-     * @param array     $states
+     * @var array|null
      */
-    public function __construct($name = null, \DateTime $date = null, array $states = null)
-    {
-        $this->name     = $name;
-        $this->date     = $date;
-        $this->states   = $states;
-    }
+    protected $excludedStates;
 
     /**
      * @param string $name
@@ -78,11 +68,11 @@ class Holiday
     }
 
     /**
-     * @param array $states
+     * @param array|null $states
      *
      * @return Holiday
      */
-    public function setStates(array $states)
+    public function setStates(array $states = null)
     {
         $this->states = $states;
 
@@ -90,11 +80,48 @@ class Holiday
     }
 
     /**
-     * @return array
+     * @return array|null
      */
     public function getStates()
     {
         return $this->states;
     }
 
+    /**
+     * @param array|null $excludedStates
+     *
+     * @return Holiday
+     */
+    public function setExcludedStates(array $excludedStates = null)
+    {
+        $this->excludedStates = $excludedStates;
+
+        return $this;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getExcludedStates()
+    {
+        return $this->excludedStates;
+    }
+
+    /**
+     * @param string $state
+     *
+     * @return bool
+     */
+    public function appliesToState($state)
+    {
+        if (is_array($this->getStates())) {
+            return array_search($state, $this->getStates()) > -1;
+        }
+
+        if (is_array($this->getExcludedStates())) {
+            return array_search($state, $this->getExcludedStates()) == -1;
+        }
+
+        return true;
+    }
 }

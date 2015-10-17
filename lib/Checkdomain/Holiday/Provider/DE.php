@@ -10,7 +10,6 @@ namespace Checkdomain\Holiday\Provider;
  */
 class DE extends AbstractEaster
 {
-
     const STATE_BW = 'Baden-Württemberg';
     const STATE_BY = 'Bayern';
     const STATE_BE = 'Berlin';
@@ -33,7 +32,7 @@ class DE extends AbstractEaster
      *
      * @return array
      */
-    public function getHolidaysByYear($year)
+    public function getHolidaysDataByYear($year)
     {
         $easter = $this->getEasterDates($year);
 
@@ -67,14 +66,14 @@ class DE extends AbstractEaster
             )),
 
             // Variable dates
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
+            $easter[self::GOOD_FRIDAY]->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
+            $easter[self::EASTER_SUNDAY]->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
+            $easter[self::EASTER_MONDAY]->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
+            $easter[self::ASCENSION_DAY]->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
+            $easter[self::PENTECOST_MONDAY]->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
 
             // Variable with states
-            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam', array(
+            $easter[self::CORPUS_CHRISTI]->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam', array(
                 self::STATE_BW,
                 self::STATE_BY,
                 self::STATE_HE,
@@ -86,5 +85,4 @@ class DE extends AbstractEaster
 
         return $holidays;
     }
-
 }

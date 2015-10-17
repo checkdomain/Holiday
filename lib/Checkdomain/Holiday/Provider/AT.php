@@ -12,7 +12,6 @@ namespace Checkdomain\Holiday\Provider;
  */
 class AT extends AbstractEaster
 {
-
 	const STATE_B = 'Burgenland';
 	const STATE_K = 'Kärnten';
 	const STATE_NO = 'Niederösterreich';
@@ -28,7 +27,7 @@ class AT extends AbstractEaster
      *
      * @return array
      */
-    public function getHolidaysByYear($year)
+    public function getHolidaysDataByYear($year)
     {
         $easter = $this->getEasterDates($year);
 
@@ -45,14 +44,13 @@ class AT extends AbstractEaster
             '12-26' => $this->createData('Stefanitag'),
 
             // Variable dates
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
-            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam'),
+            $easter[self::EASTER_SUNDAY]->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
+            $easter[self::EASTER_MONDAY]->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
+            $easter[self::ASCENSION_DAY]->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
+            $easter[self::PENTECOST_MONDAY]->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
+            $easter[self::CORPUS_CHRISTI]->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam'),
         );
 
         return $holidays;
     }
-
 }

@@ -10,13 +10,12 @@ namespace Checkdomain\Holiday\Provider;
  */
 class IT extends AbstractEaster
 {
-
     /**
      * @param int $year
      *
      * @return mixed
      */
-    public function getHolidaysByYear($year)
+    public function getHolidaysDataByYear($year)
     {
         $easter = $this->getEasterDates($year);
 
@@ -31,9 +30,10 @@ class IT extends AbstractEaster
             '12-08' => $this->createData('Immacolata Concezione'),
             '12-25' => $this->createData('Natale di Gesù'),
             '12-26' => $this->createData('Santo Stefano'),
+
             // Variable dates
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Pasqua'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Lunedì di Pasqua'),
+            $easter[self::EASTER_SUNDAY]->format(self::DATE_FORMAT)    => $this->createData('Pasqua'),
+            $easter[self::EASTER_MONDAY]->format(self::DATE_FORMAT)    => $this->createData('Lunedì di Pasqua'),
         );
 
         return $holidays;

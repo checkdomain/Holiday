@@ -5,28 +5,22 @@ use Checkdomain\Holiday\Model\Holiday;
 
 /**
  * Class Util
+ *
+ * @deprecated and will be removed in 3.0 - Use provider directly via `\Checkdomain\Holiday\Loader`
  */
 class Util
 {
+    /**
+     * @var Loader
+     */
+    protected $loader;
 
     /**
-     * Instantiates a provider for a given iso code
-     *
-     * @param string $iso
-     *
-     * @return ProviderInterface
+     * Constructor
      */
-    protected function getProvider($iso)
+    public function __construct()
     {
-        $instance = null;
-
-        $class = '\\Checkdomain\\Holiday\\Provider\\' . $iso;
-
-        if (class_exists($class)) {
-            $instance = new $class;
-        }
-
-        return $instance;
+        $this->loader = new Loader();
     }
 
     /**
@@ -44,16 +38,6 @@ class Util
     }
 
     /**
-     * @param string $iso
-     *
-     * @return string
-     */
-    protected function getIsoCode($iso)
-    {
-        return strtoupper($iso);
-    }
-
-    /**
      * Checks wether a given date is a holiday
      *
      * This method can be used to check whether a specific date is a holiday
@@ -67,7 +51,9 @@ class Util
      */
     public function isHoliday($iso, $date = 'now', $state = null)
     {
-        return ($this->getHoliday($iso, $date, $state) !== null);
+        return $this->loader
+            ->getProvider($iso)
+            ->isHoliday($this->getDateTime($date), $state);
     }
 
     /**
@@ -81,13 +67,9 @@ class Util
      */
     public function getHoliday($iso, $date = 'now', $state = null)
     {
-        $iso = $this->getIsoCode($iso);
-        $date = $this->getDateTime($date);
-
-        $provider = $this->getProvider($iso);
-        $holiday = $provider->getHolidayByDate($date, $state);
-
-        return $holiday;
+        return $this->loader
+            ->getProvider($iso)
+            ->getHoliday($this->getDateTime($date), $state);
     }
 
 }

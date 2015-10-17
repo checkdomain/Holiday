@@ -15,7 +15,7 @@ class DK extends AbstractEaster
      *
      * @return mixed
      */
-    public function getHolidaysByYear($year)
+    public function getHolidaysDataByYear($year)
     {
         $easter = $this->getEasterDates($year);
 
@@ -28,14 +28,14 @@ class DK extends AbstractEaster
             '12-26' => $this->createData('2. Juledag'),
 
             // Variable dates
-            $easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skærtorsdag'),
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Påskedag'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. Påskedag'),
+            $easter[self::MAUNDY_THURSDAY]->format(self::DATE_FORMAT)  => $this->createData('Skærtorsdag'),
+            $easter[self::GOOD_FRIDAY]->format(self::DATE_FORMAT)      => $this->createData('Langfredag'),
+            $easter[self::EASTER_SUNDAY]->format(self::DATE_FORMAT)    => $this->createData('Påskedag'),
+            $easter[self::EASTER_MONDAY]->format(self::DATE_FORMAT)    => $this->createData('2. Påskedag'),
             $greatPrayerDay->format(self::DATE_FORMAT)            => $this->createData('Store Bededag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag'),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pinsedag'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. Pinsedag')
+            $easter[self::ASCENSION_DAY]->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag'),
+            $easter[self::PENTECOST_SUNDAY]->format(self::DATE_FORMAT) => $this->createData('Pinsedag'),
+            $easter[self::PENTECOST_MONDAY]->format(self::DATE_FORMAT) => $this->createData('2. Pinsedag')
         );
 
         return $holidays;
