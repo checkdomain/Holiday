@@ -67,7 +67,12 @@ abstract class AbstractProvider implements ProviderInterface
             return true;
         }
 
-        if (is_array($holiday->getStates()) && in_array($state, $holiday->getStates())) {
+        $states = $holiday->getStates();
+        if (empty($states)) {
+            return true;
+        }
+
+        if (is_array($states) && in_array($state, $states)) {
             return true;
         }
 
