@@ -19,7 +19,7 @@ abstract class AbstractEaster extends AbstractProvider
     {
         $easterSunday = new \DateTime('21.03.'.$year);
         $easterSunday->modify(sprintf('+%d days', easter_days($year)));
-        $easterSunday->setTimezone(new \DateTimeZone(ini_get('date.timezone')));
+        $easterSunday->setTimezone(new \DateTimeZone(date_default_timezone_get()));
 
         $easterMonday = clone $easterSunday;
         $easterMonday->modify('+1 day');
