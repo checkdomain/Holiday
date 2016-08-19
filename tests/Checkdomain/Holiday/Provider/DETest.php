@@ -31,6 +31,7 @@ class DETest extends AbstractTest
             array('19.06.2014', DE::STATE_SH, null),
             array('01.11.2014', DE::STATE_BW, array('name' => 'Allerheiligen')),
             array('01.11.2014', DE::STATE_SH, null),
+			array('15.08.2016', DE::STATE_SL, array('name' => 'Mariä Himmelfahrt')),
         );
     }
 }

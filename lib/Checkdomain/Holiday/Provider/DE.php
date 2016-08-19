@@ -65,6 +65,10 @@ class DE extends AbstractEaster
                 self::STATE_RP,
                 self::STATE_SL,
             )),
+            '08-15' => $this->createData('Mariä Himmelfahrt', array(
+                self::STATE_BY,
+                self::STATE_SL,
+            )),
 
             // Variable dates
             $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
