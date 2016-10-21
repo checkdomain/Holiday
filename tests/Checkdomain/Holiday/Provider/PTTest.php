@@ -3,7 +3,9 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class FRTest
+ * Class PTTest
+ *
+ * @todo test local date
  */
 class PTTest extends AbstractTest
 {
