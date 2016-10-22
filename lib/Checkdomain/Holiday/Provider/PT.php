@@ -82,10 +82,16 @@ class PT extends AbstractEaster
             '10-05' => $this->createdata('Implantação da República'),
             '11-01' => $this->createdata('Todos os Santos'),
             '12-01' => $this->createdata('1.º de Dezembro'),
-            $easter['corpusChristi']->format(self::DATE_FORMAT)
+            $easter['corpusChristi']->format(self::DATE_FORMAT)=>$this->createData('Corpo de Deus'),
         );
 
-        return array_diff($holidays, $notHoliday);
+        foreach ($holidays as $key => $value) {
+            if ( isset($notHoliday[$key])){
+                unset( $holidays[$key] );
+            }
+        }
+
+        return $holidays;
     }
     //
     //
