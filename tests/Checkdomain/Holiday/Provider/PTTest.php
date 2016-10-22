@@ -39,6 +39,7 @@ class PTTest extends AbstractTest
             array('01.12.2016', null, array('name' => '1.º de Dezembro')),
             array('08.12.2016', null, array('name' => 'Dia da Imaculada Conceição')),
             array('25.12.2016', null, array('name' => 'Natal')),
+            array('30.05.2013', null, null),  
         );
     }
 } 
