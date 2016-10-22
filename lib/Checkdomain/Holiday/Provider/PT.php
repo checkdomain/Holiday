@@ -51,7 +51,7 @@ class PT extends AbstractEaster
             // Variable dates with states
             $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Segunda-Feira de Pentecostes', array(
                 self::STATE_ACORES,
-            )),),
+            )),
             
         );
 
