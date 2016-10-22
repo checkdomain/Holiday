@@ -72,7 +72,7 @@ class PT extends AbstractEaster
             throw new Exception("Can't find $loc Holidays", 1);
         }
 
-        return array_merge($holidays, $this->$method);
+        return array_merge($holidays, $this->$method());
     }
 
     //
