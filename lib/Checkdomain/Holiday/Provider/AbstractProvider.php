@@ -28,7 +28,7 @@ abstract class AbstractProvider implements ProviderInterface
         if (isset($holidays[$day])) {
             $holiday = $this->createModelFromData($holidays[$day], $date);
 
-            if (!$this->hasState($holiday, $state)) {
+            if ($holiday->getStates() != null && !$this->hasState($holiday, $state)) {
                 $holiday = null;
             }
 
