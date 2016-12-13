@@ -36,7 +36,7 @@ class PTTest extends AbstractTest
             array('01.05.2014', null, array('name' => 'Dia do Trabalhador')),
 
             array('01.12.2015', null, null),
-            array('15.08.2015', null, array('name' => 'Santo Stefano')),
+            array('15.08.2015', null, array('name' => 'Assunção de Nossa Senhora')),
 
             array('01.01.2016', null, null),
             array('01.11.2016', null, array('name' => 'Dia de Todos os Santos')),
