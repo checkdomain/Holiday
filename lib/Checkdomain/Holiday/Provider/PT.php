@@ -24,17 +24,20 @@ class PT extends AbstractEaster
             '04-25' => $this->createData('25 de Abril'),
             '05-01' => $this->createData('Dia do Trabalhador'),
             '06-10' => $this->createData('Dia de Portugal'),
-            '06-15' => $this->createData('Corpo de Deus'),
             '08-15' => $this->createData('Assunção de Nossa Senhora'),
-            '10-05' => $this->createData('Implantação da República'),
-            '11-01' => $this->createData('Dia de Todos os Santos'),
-            '12-01' => $this->createData('Restauração da Independência'),
             '12-08' => $this->createData('Dia da Imaculada Conceição'),
             '12-25' => $this->createData('Natal'),
             // Variable dates
             $easter['goodFriday']->format(self::DATE_FORMAT)    => $this->createData('Sexta-Feira Santa'),
             $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Páscoa'),
         );
+        //add holidays post 2015
+        if ($year >= 2016) {
+            $holidays['05-26'] = $this->createData('Corpo de Deus');
+            $holidays['10-05'] = $this->createData('Implantação da República');
+            $holidays['11-01'] = $this->createData('Dia de Todos os Santos');
+            $holidays['12-01'] = $this->createData('Restauração da Independência');
+        }
 
         return $holidays;
     }
