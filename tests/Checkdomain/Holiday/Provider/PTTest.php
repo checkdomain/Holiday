@@ -27,7 +27,7 @@ class PTTest extends AbstractTest
     public function dateProvider()
     {
         return array(
-			      array('01.01.2010', null, array('name' => 'Ano Novo')),
+            array('01.01.2010', null, array('name' => 'Ano Novo')),
 
             array('26.05.2013', null, null),
             array('25.04.2013', null, array('name' => '25 de Abril')),
