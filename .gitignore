@@ -3,3 +3,5 @@ composer.lock
 .idea/
 vendor/
 report/
+/phpunit.xml
+/nbproject/private/
