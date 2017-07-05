@@ -37,6 +37,20 @@ class DE extends AbstractEaster
     {
         $easter = $this->getEasterDates($year);
 
+        // 500th anniversay of the Reformation
+        // @see https://de.wikipedia.org/wiki/Reformationstag#Deutschland
+        if (2017 === $year) {
+            $reformationDayStates = null;
+        } else {
+            $reformationDayStates = array(
+                self::STATE_BB,
+                self::STATE_MV,
+                self::STATE_SN,
+                self::STATE_ST,
+                self::STATE_TH,
+            );
+        }
+
         $holidays = array(
             // Fixed dates
             '01-01' => $this->createData('Neujahr'),
@@ -51,13 +65,7 @@ class DE extends AbstractEaster
                 self::STATE_BY,
                 self::STATE_ST,
             )),
-            '10-31' => $this->createData('Reformationstag', array(
-                self::STATE_BB,
-                self::STATE_MV,
-                self::STATE_SN,
-                self::STATE_ST,
-                self::STATE_TH,
-            )),
+            '10-31' => $this->createData('Reformationstag', $reformationDayStates),
             '11-01' => $this->createData('Allerheiligen', array(
                 self::STATE_BW,
                 self::STATE_BY,

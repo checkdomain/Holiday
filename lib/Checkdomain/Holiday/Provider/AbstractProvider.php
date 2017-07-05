@@ -23,7 +23,7 @@ abstract class AbstractProvider implements ProviderInterface
     {
         $day = $date->format(self::DATE_FORMAT);
 
-        $holidays = $this->getHolidaysByYear($date->format('Y'));
+        $holidays = $this->getHolidaysByYear(intval($date->format('Y')));
 
         if (isset($holidays[$day])) {
             $holiday = $this->createModelFromData($holidays[$day], $date);
