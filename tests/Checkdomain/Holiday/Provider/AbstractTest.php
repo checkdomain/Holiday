@@ -28,7 +28,7 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase
             $this->assertNull($holiday);
         } else {
             $this->assertNotNull($holiday, 'No Holiday found but assumed to find one on ' . $date->format('Y-m-d'));
-            $this->assertEquals($date->format('d.m.Y'), $holiday->getDate()->format('d.m.Y'));
+            $this->assertEquals($date->format('Y-m-d'), $holiday->getDate()->format('Y-m-d'));
 
             foreach ($expectation as $property => $expectedValue) {
                 $method = 'get' . ucfirst($property);

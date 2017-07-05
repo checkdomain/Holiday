@@ -23,14 +23,14 @@ class DETest extends AbstractTest
     public function dateProvider()
     {
         return array(
-            array('21.03.2013', null, null),
-            array('01.01.2013', null, array('name' => 'Neujahr')),
-            array('06.01.2013', DE::STATE_BY, array('name' => 'Heilige Drei Könige')),
-            array('06.01.2013', DE::STATE_SH, null),
-            array('19.06.2014', DE::STATE_HE, array('name' => 'Fronleichnam')),
-            array('19.06.2014', DE::STATE_SH, null),
-            array('01.11.2014', DE::STATE_BW, array('name' => 'Allerheiligen')),
-            array('01.11.2014', DE::STATE_SH, null),
+            array('2013-03-21', null, null),
+            array('2013-01-01', null, array('name' => 'Neujahr')),
+            array('2013-01-06', DE::STATE_BY, array('name' => 'Heilige Drei Könige')),
+            array('2013-01-06', DE::STATE_SH, null),
+            array('2014-06-19', DE::STATE_HE, array('name' => 'Fronleichnam')),
+            array('2014-06-19', DE::STATE_SH, null),
+            array('2014-11-01', DE::STATE_BW, array('name' => 'Allerheiligen')),
+            array('2014-11-01', DE::STATE_SH, null),
         );
     }
 }

@@ -50,18 +50,18 @@ class FRTest extends AbstractTest
     public function dateProvider()
     {
         return array(
-            array('21.03.2014', null, null),
-            array('01.01.2014', null, array('name' => 'Jour de l\'an')),
-            array('21.04.2014', null, array('name' => 'Lundi de Pâques')),
-            array('01.05.2014', null, array('name' => 'Fête du Travail')),
-            array('08.05.2014', null, array('name' => '8 Mai 1945')),
-            array('29.05.2014', null, array('name' => 'Jeudi de l\'Ascension')),
-            array('09.06.2014', null, array('name' => 'Lundi de Pentecôte')),
-            array('14.07.2014', null, array('name' => 'Fête Nationale')),
-            array('15.08.2014', null, array('name' => 'Assomption')),
-            array('01.11.2014', null, array('name' => 'La Toussaint')),
-            array('11.11.2014', null, array('name' => 'Armistice')),
-            array('25.12.2014', null, array('name' => 'Noël')),
+            array('2014-03-21', null, null),
+            array('2014-01-01', null, array('name' => 'Jour de l\'an')),
+            array('2014-04-21', null, array('name' => 'Lundi de Pâques')),
+            array('2014-05-01', null, array('name' => 'Fête du Travail')),
+            array('2014-05-08', null, array('name' => '8 Mai 1945')),
+            array('2014-05-29', null, array('name' => 'Jeudi de l\'Ascension')),
+            array('2014-06-09', null, array('name' => 'Lundi de Pentecôte')),
+            array('2014-07-14', null, array('name' => 'Fête Nationale')),
+            array('2014-08-15', null, array('name' => 'Assomption')),
+            array('2014-11-01', null, array('name' => 'La Toussaint')),
+            array('2014-11-11', null, array('name' => 'Armistice')),
+            array('2014-12-25', null, array('name' => 'Noël')),
         );
     }
 } 

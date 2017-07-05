@@ -28,16 +28,16 @@ class PLTest extends AbstractTest
     public function dateProvider()
     {
         return array(
-            array('01.01.2014', null, array('name' => 'Nowy Rok')),
-            array('27.03.2016', null, array('name' => 'Wielkanoc')),
-            array('28.03.2016', null, array('name' => 'Poniedziałek Wielkanocny')),
-            array('25.12.2014', null, array('name' => 'Boże Narodzenie')),
-            array('11.11.2013', null, array('name' => 'Święto Niepodległości')),
-            array('04.06.2015', null, array('name' => 'Boże Ciało')),
-            array('01.11.2018', null, array('name' => 'Wszystkich Świętych')),
-            array('01.05.2015', null, array('name' => 'Święto Pracy')),
-            array('26.12.2016', null, array('name' => 'Drugi dzień Bożego Narodzenia')),
-            array('15.08.2016', null, array('name' => 'Wniebowzięcie Najświętszej Maryi Panny')),
+            array('2014-01-01', null, array('name' => 'Nowy Rok')),
+            array('2016-03-27', null, array('name' => 'Wielkanoc')),
+            array('2016-03-28', null, array('name' => 'Poniedziałek Wielkanocny')),
+            array('2014-12-25', null, array('name' => 'Boże Narodzenie')),
+            array('2013-11-11', null, array('name' => 'Święto Niepodległości')),
+            array('2015-06-04', null, array('name' => 'Boże Ciało')),
+            array('2018-11-01', null, array('name' => 'Wszystkich Świętych')),
+            array('2015-05-01', null, array('name' => 'Święto Pracy')),
+            array('2016-12-26', null, array('name' => 'Drugi dzień Bożego Narodzenia')),
+            array('2016-08-15', null, array('name' => 'Wniebowzięcie Najświętszej Maryi Panny')),
         );
     }
 }

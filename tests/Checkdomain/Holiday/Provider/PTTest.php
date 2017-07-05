@@ -27,24 +27,24 @@ class PTTest extends AbstractTest
     public function dateProvider()
     {
         return array(
-            array('01.01.2010', null, array('name' => 'Ano Novo')),
+            array('2010-01-01', null, array('name' => 'Ano Novo')),
 
-            array('26.05.2013', null, null),
-            array('25.04.2013', null, array('name' => '25 de Abril')),
+            array('2013-05-26', null, null),
+            array('2013-04-25', null, array('name' => '25 de Abril')),
 
-            array('05.10.2014', null, null),
-            array('01.05.2014', null, array('name' => 'Dia do Trabalhador')),
+            array('2014-10-05', null, null),
+            array('2014-05-01', null, array('name' => 'Dia do Trabalhador')),
 
-            array('01.12.2015', null, null),
-            array('15.08.2015', null, array('name' => 'Assunção de Nossa Senhora')),
+            array('2015-12-01', null, null),
+            array('2015-08-15', null, array('name' => 'Assunção de Nossa Senhora')),
 
-            array('02.01.2016', null, null),
-            array('01.11.2016', null, array('name' => 'Dia de Todos os Santos')),
-            array('25.12.2016', null, array('name' => 'Natal')),
+            array('2016-01-02', null, null),
+            array('2016-11-01', null, array('name' => 'Dia de Todos os Santos')),
+            array('2016-12-25', null, array('name' => 'Natal')),
 
-            array('03.09.2017', null, null),
-            array('01.12.2017', null, array('name' => 'Restauração da Independência')),
-            array('10.06.2017', null, array('name' => 'Dia de Portugal')),
+            array('2017-09-03', null, null),
+            array('2017-12-01', null, array('name' => 'Restauração da Independência')),
+            array('2017-06-10', null, array('name' => 'Dia de Portugal')),
         );
     }
 }

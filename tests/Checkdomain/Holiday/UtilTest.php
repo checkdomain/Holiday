@@ -63,14 +63,14 @@ class UtilTest extends \PHPUnit_Framework_TestCase
     public function providerHoliday()
     {
         return array(
-            array('DE', '25.12.2013', array(true, array(
+            array('DE', '2013-12-25', array(true, array(
                 'name' => '1. Weihnachtstag'
             ))),
-            array('DE', '01.05.2013', array(true, array(
+            array('DE', '2013-05-01', array(true, array(
                 'name' => 'Tag der Arbeit'
             ))),
-            array('DE', '02.01.2013', array(false, null)),
-            array('DE', '26.04.2038', array(true, array(
+            array('DE', '2013-01-02', array(false, null)),
+            array('DE', '2038-04-26', array(true, array(
                 'name' => 'Ostermontag'
             )))
         );

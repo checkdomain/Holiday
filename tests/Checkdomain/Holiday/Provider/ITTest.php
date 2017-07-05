@@ -28,20 +28,20 @@ class ITTest extends AbstractTest
     public function dateProvider()
     {
         return array(
-			array('01.01.2010', null, array('name' => 'Capodanno')),
+			array('2010-01-01', null, array('name' => 'Capodanno')),
 
-            array('24.04.2014', null, null),
-            array('25.04.2014', null, array('name' => 'Liberazione dal nazifascismo (1945)')),
-            array('01.01.2014', null, array('name' => 'Capodanno')),
+            array('2014-04-24', null, null),
+            array('2014-04-25', null, array('name' => 'Liberazione dal nazifascismo (1945)')),
+            array('2014-01-01', null, array('name' => 'Capodanno')),
 
-            array('20.04.2014', null, array('name' => 'Pasqua')),
-            array('21.04.2014', null, array('name' => 'Lunedì di Pasqua')),
+            array('2014-04-20', null, array('name' => 'Pasqua')),
+            array('2014-04-21', null, array('name' => 'Lunedì di Pasqua')),
 
-            array('25.12.2016', null, array('name' => 'Natale di Gesù')),
-            array('26.12.2016', null, array('name' => 'Santo Stefano')),
+            array('2016-12-25', null, array('name' => 'Natale di Gesù')),
+            array('2016-12-26', null, array('name' => 'Santo Stefano')),
 
-            array('02.06.2016', null, array('name' => 'Festa della Repubblica')),
-            array('15.08.2016', null, array('name' => 'Assunzione di Maria')),
+            array('2016-06-02', null, array('name' => 'Festa della Repubblica')),
+            array('2016-08-15', null, array('name' => 'Assunzione di Maria')),
         );
     }
 }
