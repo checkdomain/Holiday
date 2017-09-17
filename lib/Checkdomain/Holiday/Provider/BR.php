@@ -13,6 +13,7 @@ class BR extends AbstractEaster
     const STATE_AC = 'Acre';
     const STATE_AL = 'Alagoas';
     const STATE_AP = 'Amapá';
+    const STATE_AM = 'Amazonas';
 
     /**
      * {@inheritdoc}
@@ -48,18 +49,22 @@ class BR extends AbstractEaster
         $this->setHolidayForState($holidays, '01-23', self::STATE_AC, 'Dia do Evangélico');
         $this->setHolidayForState($holidays, '03-08', self::STATE_AC, 'Alusivo ao Dia Internacional da Mulher');
         $this->setHolidayForState($holidays, '06-15', self::STATE_AC, 'Aniversário do Estado');
-        $this->setHolidayForState($holidays, '09-05', self::STATE_AC, 'Dia da Amazônia');
+        $this->setHolidayForState($holidays, '09-05', self::STATE_AC, 'Feriado Estadual'); // Dia da Amazônia
         $this->setHolidayForState($holidays, '11-17', self::STATE_AC, 'Assinatura do Tratado de Petrópolis');
 
         // Alagoas State Fixed
         $this->setHolidayForState($holidays, '06-24', self::STATE_AL, 'São João');
         $this->setHolidayForState($holidays, '06-29', self::STATE_AL, 'São Pedro');
         $this->setHolidayForState($holidays, '09-16', self::STATE_AL, 'Emancipação Política');
-        $this->setHolidayForState($holidays, '11-20', self::STATE_AL, 'Morte de Zumbi dos Palmares');
+        $this->setHolidayForState($holidays, '11-20', self::STATE_AL, 'Dia da Consciência Negra');
 
         // Amapá State Fixed
         $this->setHolidayForState($holidays, '03-19', self::STATE_AP, 'São José');
         $this->setHolidayForState($holidays, '09-13', self::STATE_AP, 'Criação do Território Federal');
+
+        // Amazonas State Fixed
+        $this->setHolidayForState($holidays, '09-05', self::STATE_AM, 'Feriado Estadual'); // Elevação do Amazonas à Categoria de Província
+        $this->setHolidayForState($holidays, '11-20', self::STATE_AM, 'Dia da Consciência Negra');
 
         return $holidays;
     }

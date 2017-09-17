@@ -46,16 +46,19 @@ class BRTest extends AbstractTest
             array('2017-01-23', BR::STATE_AC, array('name' => 'Dia do Evangélico')),
             array('2017-03-08', BR::STATE_AC, array('name' => 'Alusivo ao Dia Internacional da Mulher')),
             array('2016-06-15', BR::STATE_AC, array('name' => 'Aniversário do Estado')), // conflicts: 2017-06-15
-            array('2017-09-05', BR::STATE_AC, array('name' => 'Dia da Amazônia')),
+            array('2017-09-05', BR::STATE_AC, array('name' => 'Feriado Estadual')),
             array('2017-11-17', BR::STATE_AC, array('name' => 'Assinatura do Tratado de Petrópolis')),
             // Alagoas State Fixed
             array('2017-06-24', BR::STATE_AL, array('name' => 'São João')),
             array('2017-06-29', BR::STATE_AL, array('name' => 'São Pedro')),
             array('2017-09-16', BR::STATE_AL, array('name' => 'Emancipação Política')),
-            array('2017-11-20', BR::STATE_AL, array('name' => 'Morte de Zumbi dos Palmares')),
+            array('2017-11-20', BR::STATE_AL, array('name' => 'Dia da Consciência Negra')),
             // Amapá State Fixed
             array('2017-03-19', BR::STATE_AP, array('name' => 'São José')),
             array('2017-09-13', BR::STATE_AP, array('name' => 'Criação do Território Federal')),
+            // Amazonas State Fixed
+            array('2017-09-05', BR::STATE_AM, array('name' => 'Feriado Estadual')),
+            array('2017-11-20', BR::STATE_AM, array('name' => 'Dia da Consciência Negra')),
         );
     }
 }
