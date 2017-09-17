@@ -83,6 +83,10 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-08-05', BR::STATE_PB, array('name' => 'Fundação do Estado')),
             // Paraná State Fixed
             array('2017-12-19', BR::STATE_PR, array('name' => 'Emancipação Política')),
+            // Pernambuco State Variable
+            array('2016-03-06', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
+            array('2017-03-05', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
+            array('2018-03-04', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
         );
     }
 }

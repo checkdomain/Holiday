@@ -3,6 +3,7 @@
 namespace Checkdomain\Holiday\Provider;
 
 use DateInterval;
+use DateTime;
 use DateTimeImmutable;
 
 /**
@@ -26,6 +27,7 @@ class BR extends AbstractEaster
     const STATE_PA = 'Pará';
     const STATE_PB = 'Paraíba';
     const STATE_PR = 'Paraná';
+    const STATE_PE = 'Pernambuco';
 
     /**
      * {@inheritdoc}
@@ -113,6 +115,14 @@ class BR extends AbstractEaster
 
         // Paraná State Fixed
         $this->setHolidayForState($holidays, '12-19', self::STATE_PR, 'Emancipação Política');
+
+        // Pernambuco State Variable
+        $this->setHolidayForState(
+            $holidays,
+            (new DateTime(sprintf('%s-03 first sunday', $year)))->format(self::DATE_FORMAT),
+            self::STATE_PE,
+            'Revolução Pernambucana'
+        );
 
         return $holidays;
     }
