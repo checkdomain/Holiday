@@ -68,6 +68,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-01-01', BR::STATE_ES, array('name' => 'Confraternização Universal')),
             // Goiás State (Without Holidays)
             array('2017-01-01', BR::STATE_GO, array('name' => 'Confraternização Universal')),
+            // Maranhão State Fixed
+            array('2017-07-28', BR::STATE_MA, array('name' => 'Adesão do Maranhão à Independência do Brasil')),
         );
     }
 }

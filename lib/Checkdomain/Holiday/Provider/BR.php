@@ -19,6 +19,7 @@ class BR extends AbstractEaster
     const STATE_DF = 'Distrito Federal'; // TODO District or State?
     const STATE_ES = 'Espírito Santo';
     const STATE_GO = 'Goiás';
+    const STATE_MA = 'Maranhão';
 
     /**
      * {@inheritdoc}
@@ -84,6 +85,9 @@ class BR extends AbstractEaster
         // Espírito Santo State (Without Holidays)
 
         // Goiás State (Without Holidays)
+
+        // Maranhão State Fixed
+        $this->setHolidayForState($holidays, '07-28', self::STATE_MA, 'Adesão do Maranhão à Independência do Brasil');
 
         return $holidays;
     }
