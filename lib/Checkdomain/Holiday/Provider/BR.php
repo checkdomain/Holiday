@@ -20,6 +20,7 @@ class BR extends AbstractEaster
     const STATE_ES = 'Espírito Santo';
     const STATE_GO = 'Goiás';
     const STATE_MA = 'Maranhão';
+    const STATE_MT = 'Mato Grosso';
 
     /**
      * {@inheritdoc}
@@ -88,6 +89,9 @@ class BR extends AbstractEaster
 
         // Maranhão State Fixed
         $this->setHolidayForState($holidays, '07-28', self::STATE_MA, 'Adesão do Maranhão à Independência do Brasil');
+
+        // Mato Grosso State Fixed
+        $this->setHolidayForState($holidays, '11-20', self::STATE_MT, 'Dia da Consciência Negra');
 
         return $holidays;
     }

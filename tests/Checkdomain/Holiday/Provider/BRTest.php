@@ -70,6 +70,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-01-01', BR::STATE_GO, array('name' => 'Confraternização Universal')),
             // Maranhão State Fixed
             array('2017-07-28', BR::STATE_MA, array('name' => 'Adesão do Maranhão à Independência do Brasil')),
+            // Mato Grosso State Fixed
+            array('2017-11-20', BR::STATE_MT, array('name' => 'Dia da Consciência Negra')),
         );
     }
 }
