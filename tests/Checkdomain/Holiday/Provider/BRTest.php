@@ -87,6 +87,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2016-03-06', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
             array('2017-03-05', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
             array('2018-03-04', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
+            // Piauí State Fixed
+            array('2017-10-19', BR::STATE_PI, array('name' => 'Dia do Piauí')),
         );
     }
 }

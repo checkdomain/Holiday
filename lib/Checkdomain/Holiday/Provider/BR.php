@@ -28,6 +28,7 @@ class BR extends AbstractEaster
     const STATE_PB = 'Paraíba';
     const STATE_PR = 'Paraná';
     const STATE_PE = 'Pernambuco';
+    const STATE_PI = 'Piauí';
 
     /**
      * {@inheritdoc}
@@ -123,6 +124,9 @@ class BR extends AbstractEaster
             self::STATE_PE,
             'Revolução Pernambucana'
         );
+
+        // Piauí State Fixed
+        $this->setHolidayForState($holidays, '10-19', self::STATE_PI, 'Dia do Piauí');
 
         return $holidays;
     }
