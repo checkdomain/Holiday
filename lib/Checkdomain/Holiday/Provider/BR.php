@@ -25,6 +25,7 @@ class BR extends AbstractEaster
     const STATE_MG = 'Minas Gerais';
     const STATE_PA = 'Pará';
     const STATE_PB = 'Paraíba';
+    const STATE_PR = 'Paraná';
 
     /**
      * {@inheritdoc}
@@ -109,6 +110,9 @@ class BR extends AbstractEaster
         // Paraíba State Fixed
         $this->setHolidayForState($holidays, '07-26', self::STATE_PB, 'Homenagem à Memória do Ex-Presidente João Pessoa');
         $this->setHolidayForState($holidays, '08-05', self::STATE_PB, 'Fundação do Estado');
+
+        // Paraná State Fixed
+        $this->setHolidayForState($holidays, '12-19', self::STATE_PR, 'Emancipação Política');
 
         return $holidays;
     }

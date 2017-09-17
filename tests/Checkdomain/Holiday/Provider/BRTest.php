@@ -81,6 +81,8 @@ namespace Checkdomain\Holiday\Provider;
             // Paraíba State Fixed
             array('2017-07-26', BR::STATE_PB, array('name' => 'Homenagem à Memória do Ex-Presidente João Pessoa')),
             array('2017-08-05', BR::STATE_PB, array('name' => 'Fundação do Estado')),
+            // Paraná State Fixed
+            array('2017-12-19', BR::STATE_PR, array('name' => 'Emancipação Política')),
         );
     }
 }
