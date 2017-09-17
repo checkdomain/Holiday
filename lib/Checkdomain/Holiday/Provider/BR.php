@@ -10,6 +10,8 @@ use DateTimeImmutable;
  */
 class BR extends AbstractEaster
 {
+    const STATE_AC = 'Acre';
+
     /**
      * {@inheritdoc}
      */
@@ -40,6 +42,39 @@ class BR extends AbstractEaster
             $easterSunday->add(new DateInterval('P60D'))->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
         );
 
+        // Acre State Fixed
+        $this->setHolidayForState($holidays, '01-23', self::STATE_AC, 'Dia do Evangélico');
+        $this->setHolidayForState($holidays, '03-08', self::STATE_AC, 'Alusivo ao Dia Internacional da Mulher');
+        $this->setHolidayForState($holidays, '06-15', self::STATE_AC, 'Aniversário do Estado');
+        $this->setHolidayForState($holidays, '09-05', self::STATE_AC, 'Dia da Amazônia');
+        $this->setHolidayForState($holidays, '11-17', self::STATE_AC, 'Assinatura do Tratado de Petrópolis');
+
         return $holidays;
+    }
+
+    /**
+     * Set Holiday for State
+     *
+     * This method was created because Brazilian national holidays may conflict with state holidays. For example,
+     * "2017-06-15" is a national variable holiday called "Corpus Christi", and is an Acre state fixed holiday called
+     * "Aniversário do Estado". In these cases, national holiday will be consider more important.
+     *
+     * @param  array  $holidays Holidays Dataset
+     * @param  string $day      Day
+     * @param  string $state    State Name
+     * @param  string $name     Holiday Name
+     */
+    private function setHolidayForState(&$holidays, $day, $state, $name)
+    {
+        // Exists?
+        if (! array_key_exists($day, $holidays)) {
+            // Initialized as State Holiday
+            $holidays[$day] = $this->createData($name, []);
+        }
+        // Is a state holiday?
+        if (is_array($holidays[$day]['states'])) {
+            // Include Current State
+            $holidays[$day]['states'][] = $state;
+        }
     }
 }

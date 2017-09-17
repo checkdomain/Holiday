@@ -42,6 +42,12 @@ class BRTest extends AbstractTest
             array('2016-05-26', null, array('name' => 'Corpus Christi')),
             array('2017-06-15', null, array('name' => 'Corpus Christi')),
             array('2018-05-31', null, array('name' => 'Corpus Christi')),
+            // Acre State Fixed
+            array('2017-01-23', BR::STATE_AC, array('name' => 'Dia do Evangélico')),
+            array('2017-03-08', BR::STATE_AC, array('name' => 'Alusivo ao Dia Internacional da Mulher')),
+            array('2016-06-15', BR::STATE_AC, array('name' => 'Aniversário do Estado')), // conflicts: 2017-06-15
+            array('2017-09-05', BR::STATE_AC, array('name' => 'Dia da Amazônia')),
+            array('2017-11-17', BR::STATE_AC, array('name' => 'Assinatura do Tratado de Petrópolis')),
         );
     }
 }
