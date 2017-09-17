@@ -17,6 +17,7 @@ class BR extends AbstractEaster
     const STATE_BA = 'Bahia';
     const STATE_CE = 'Ceará';
     const STATE_DF = 'Distrito Federal'; // TODO District or State?
+    const STATE_ES = 'Espírito Santo';
 
     /**
      * {@inheritdoc}
@@ -78,6 +79,8 @@ class BR extends AbstractEaster
         // Distrito Federal District Fixed
         $this->setHolidayForState($holidays, '04-21', self::STATE_DF, 'Fundação de Brasília');
         $this->setHolidayForState($holidays, '11-30', self::STATE_DF, 'Dia do Evangélico');
+
+        // Espírito Santo State (Without Holidays)
 
         return $holidays;
     }

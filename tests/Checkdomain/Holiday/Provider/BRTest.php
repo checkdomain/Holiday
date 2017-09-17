@@ -64,6 +64,8 @@ namespace Checkdomain\Holiday\Provider;
             // Distrito Federal District Fixed
             array('2017-04-21', BR::STATE_DF, array('name' => 'Tiradentes')), // Fundação de Brasília
             array('2017-11-30', BR::STATE_DF, array('name' => 'Dia do Evangélico')),
+            // Espírito Santo State (Without Holidays)
+            array('2017-01-01', BR::STATE_ES, array('name' => 'Confraternização Universal')),
         );
     }
 }
