@@ -61,6 +61,9 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-07-02', BR::STATE_BA, array('name' => 'Independência da Bahia')),
             // Ceará State Fixed
             array('2017-03-25', BR::STATE_CE, array('name' => 'Data da Abolição da Escravidão no Ceará')),
+            // Distrito Federal District Fixed
+            array('2017-04-21', BR::STATE_DF, array('name' => 'Tiradentes')), // Fundação de Brasília
+            array('2017-11-30', BR::STATE_DF, array('name' => 'Dia do Evangélico')),
         );
     }
 }
