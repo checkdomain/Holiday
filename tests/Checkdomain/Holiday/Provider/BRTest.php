@@ -72,6 +72,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-07-28', BR::STATE_MA, array('name' => 'Adesão do Maranhão à Independência do Brasil')),
             // Mato Grosso State Fixed
             array('2017-11-20', BR::STATE_MT, array('name' => 'Dia da Consciência Negra')),
+            // Mato Grosso do Sul State Fixed
+            array('2017-10-11', BR::STATE_MS, array('name' => 'Criação do Estado')),
         );
     }
 }

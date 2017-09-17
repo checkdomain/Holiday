@@ -21,6 +21,7 @@ class BR extends AbstractEaster
     const STATE_GO = 'Goiás';
     const STATE_MA = 'Maranhão';
     const STATE_MT = 'Mato Grosso';
+    const STATE_MS = 'Mato Grosso do Sul';
 
     /**
      * {@inheritdoc}
@@ -92,6 +93,9 @@ class BR extends AbstractEaster
 
         // Mato Grosso State Fixed
         $this->setHolidayForState($holidays, '11-20', self::STATE_MT, 'Dia da Consciência Negra');
+
+        // Mato Grosso do Sul State Fixed
+        $this->setHolidayForState($holidays, '10-11', self::STATE_MS, 'Criação do Estado');
 
         return $holidays;
     }
