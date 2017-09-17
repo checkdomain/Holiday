@@ -3,9 +3,7 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class BRTest
- */
-class BRTest extends AbstractTest
+ * Class BRTest */ class BRTest extends AbstractTest
 {
     /**
      * {@inheritdoc}
@@ -59,6 +57,8 @@ class BRTest extends AbstractTest
             // Amazonas State Fixed
             array('2017-09-05', BR::STATE_AM, array('name' => 'Feriado Estadual')),
             array('2017-11-20', BR::STATE_AM, array('name' => 'Dia da Consciência Negra')),
+            // Bahia State Fixed
+            array('2017-07-02', BR::STATE_BA, array('name' => 'Independência da Bahia')),
         );
     }
 }

@@ -14,6 +14,7 @@ class BR extends AbstractEaster
     const STATE_AL = 'Alagoas';
     const STATE_AP = 'Amapá';
     const STATE_AM = 'Amazonas';
+    const STATE_BA = 'Bahia';
 
     /**
      * {@inheritdoc}
@@ -65,6 +66,9 @@ class BR extends AbstractEaster
         // Amazonas State Fixed
         $this->setHolidayForState($holidays, '09-05', self::STATE_AM, 'Feriado Estadual'); // Elevação do Amazonas à Categoria de Província
         $this->setHolidayForState($holidays, '11-20', self::STATE_AM, 'Dia da Consciência Negra');
+
+        // Bahia State Fixed
+        $this->setHolidayForState($holidays, '07-02', self::STATE_BA, 'Independência da Bahia');
 
         return $holidays;
     }
