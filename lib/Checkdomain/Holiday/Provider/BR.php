@@ -15,6 +15,7 @@ class BR extends AbstractEaster
     const STATE_AP = 'Amapá';
     const STATE_AM = 'Amazonas';
     const STATE_BA = 'Bahia';
+    const STATE_CE = 'Ceará';
 
     /**
      * {@inheritdoc}
@@ -69,6 +70,9 @@ class BR extends AbstractEaster
 
         // Bahia State Fixed
         $this->setHolidayForState($holidays, '07-02', self::STATE_BA, 'Independência da Bahia');
+
+        // Ceará State Fixed
+        $this->setHolidayForState($holidays, '03-25', self::STATE_CE, 'Data da Abolição da Escravidão no Ceará');
 
         return $holidays;
     }

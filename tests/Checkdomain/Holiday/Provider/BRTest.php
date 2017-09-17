@@ -59,6 +59,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-11-20', BR::STATE_AM, array('name' => 'Dia da Consciência Negra')),
             // Bahia State Fixed
             array('2017-07-02', BR::STATE_BA, array('name' => 'Independência da Bahia')),
+            // Ceará State Fixed
+            array('2017-03-25', BR::STATE_CE, array('name' => 'Data da Abolição da Escravidão no Ceará')),
         );
     }
 }
