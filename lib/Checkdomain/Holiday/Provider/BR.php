@@ -23,6 +23,7 @@ class BR extends AbstractEaster
     const STATE_MT = 'Mato Grosso';
     const STATE_MS = 'Mato Grosso do Sul';
     const STATE_MG = 'Minas Gerais';
+    const STATE_PA = 'Pará';
 
     /**
      * {@inheritdoc}
@@ -100,6 +101,9 @@ class BR extends AbstractEaster
 
         // Minas Gerais State Fixed
         $this->setHolidayForState($holidays, '04-21', self::STATE_MG, 'Data Magna do Estado');
+
+        // Pará State Fixed
+        $this->setHolidayForState($holidays, '08-15', self::STATE_PA, 'Adesão do Grão-Pará à Independência do Brasil');
 
         return $holidays;
     }
