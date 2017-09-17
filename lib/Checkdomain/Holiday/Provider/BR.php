@@ -12,6 +12,7 @@ class BR extends AbstractEaster
 {
     const STATE_AC = 'Acre';
     const STATE_AL = 'Alagoas';
+    const STATE_AP = 'Amapá';
 
     /**
      * {@inheritdoc}
@@ -55,6 +56,10 @@ class BR extends AbstractEaster
         $this->setHolidayForState($holidays, '06-29', self::STATE_AL, 'São Pedro');
         $this->setHolidayForState($holidays, '09-16', self::STATE_AL, 'Emancipação Política');
         $this->setHolidayForState($holidays, '11-20', self::STATE_AL, 'Morte de Zumbi dos Palmares');
+
+        // Amapá State Fixed
+        $this->setHolidayForState($holidays, '03-19', self::STATE_AP, 'São José');
+        $this->setHolidayForState($holidays, '09-13', self::STATE_AP, 'Criação do Território Federal');
 
         return $holidays;
     }

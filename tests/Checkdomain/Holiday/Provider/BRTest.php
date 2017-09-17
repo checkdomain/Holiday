@@ -53,6 +53,9 @@ class BRTest extends AbstractTest
             array('2017-06-29', BR::STATE_AL, array('name' => 'São Pedro')),
             array('2017-09-16', BR::STATE_AL, array('name' => 'Emancipação Política')),
             array('2017-11-20', BR::STATE_AL, array('name' => 'Morte de Zumbi dos Palmares')),
+            // Amapá State Fixed
+            array('2017-03-19', BR::STATE_AP, array('name' => 'São José')),
+            array('2017-09-13', BR::STATE_AP, array('name' => 'Criação do Território Federal')),
         );
     }
 }
