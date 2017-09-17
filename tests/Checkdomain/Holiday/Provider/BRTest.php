@@ -74,6 +74,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-11-20', BR::STATE_MT, array('name' => 'Dia da Consciência Negra')),
             // Mato Grosso do Sul State Fixed
             array('2017-10-11', BR::STATE_MS, array('name' => 'Criação do Estado')),
+            // Minas Gerais State Fixed
+            array('2017-04-21', BR::STATE_MG, array('name' => 'Tiradentes')), // Data Magna do Estado
         );
     }
 }
