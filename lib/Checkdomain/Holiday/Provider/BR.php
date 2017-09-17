@@ -11,6 +11,7 @@ use DateTimeImmutable;
 class BR extends AbstractEaster
 {
     const STATE_AC = 'Acre';
+    const STATE_AL = 'Alagoas';
 
     /**
      * {@inheritdoc}
@@ -48,6 +49,12 @@ class BR extends AbstractEaster
         $this->setHolidayForState($holidays, '06-15', self::STATE_AC, 'Aniversário do Estado');
         $this->setHolidayForState($holidays, '09-05', self::STATE_AC, 'Dia da Amazônia');
         $this->setHolidayForState($holidays, '11-17', self::STATE_AC, 'Assinatura do Tratado de Petrópolis');
+
+        // Alagoas State Fixed
+        $this->setHolidayForState($holidays, '06-24', self::STATE_AL, 'São João');
+        $this->setHolidayForState($holidays, '06-29', self::STATE_AL, 'São Pedro');
+        $this->setHolidayForState($holidays, '09-16', self::STATE_AL, 'Emancipação Política');
+        $this->setHolidayForState($holidays, '11-20', self::STATE_AL, 'Morte de Zumbi dos Palmares');
 
         return $holidays;
     }

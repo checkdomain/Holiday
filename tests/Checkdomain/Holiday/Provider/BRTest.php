@@ -48,6 +48,11 @@ class BRTest extends AbstractTest
             array('2016-06-15', BR::STATE_AC, array('name' => 'Aniversário do Estado')), // conflicts: 2017-06-15
             array('2017-09-05', BR::STATE_AC, array('name' => 'Dia da Amazônia')),
             array('2017-11-17', BR::STATE_AC, array('name' => 'Assinatura do Tratado de Petrópolis')),
+            // Alagoas State Fixed
+            array('2017-06-24', BR::STATE_AL, array('name' => 'São João')),
+            array('2017-06-29', BR::STATE_AL, array('name' => 'São Pedro')),
+            array('2017-09-16', BR::STATE_AL, array('name' => 'Emancipação Política')),
+            array('2017-11-20', BR::STATE_AL, array('name' => 'Morte de Zumbi dos Palmares')),
         );
     }
 }
