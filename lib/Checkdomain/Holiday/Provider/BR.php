@@ -18,6 +18,7 @@ class BR extends AbstractEaster
     const STATE_CE = 'Ceará';
     const STATE_DF = 'Distrito Federal'; // TODO District or State?
     const STATE_ES = 'Espírito Santo';
+    const STATE_GO = 'Goiás';
 
     /**
      * {@inheritdoc}
@@ -81,6 +82,8 @@ class BR extends AbstractEaster
         $this->setHolidayForState($holidays, '11-30', self::STATE_DF, 'Dia do Evangélico');
 
         // Espírito Santo State (Without Holidays)
+
+        // Goiás State (Without Holidays)
 
         return $holidays;
     }
