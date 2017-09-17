@@ -24,6 +24,7 @@ class BR extends AbstractEaster
     const STATE_MS = 'Mato Grosso do Sul';
     const STATE_MG = 'Minas Gerais';
     const STATE_PA = 'Pará';
+    const STATE_PB = 'Paraíba';
 
     /**
      * {@inheritdoc}
@@ -104,6 +105,10 @@ class BR extends AbstractEaster
 
         // Pará State Fixed
         $this->setHolidayForState($holidays, '08-15', self::STATE_PA, 'Adesão do Grão-Pará à Independência do Brasil');
+
+        // Paraíba State Fixed
+        $this->setHolidayForState($holidays, '07-26', self::STATE_PB, 'Homenagem à Memória do Ex-Presidente João Pessoa');
+        $this->setHolidayForState($holidays, '08-05', self::STATE_PB, 'Fundação do Estado');
 
         return $holidays;
     }

@@ -78,6 +78,9 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-04-21', BR::STATE_MG, array('name' => 'Tiradentes')), // Data Magna do Estado
             // Pará State Fixed
             array('2017-08-15', BR::STATE_PA, array('name' => 'Adesão do Grão-Pará à Independência do Brasil')),
+            // Paraíba State Fixed
+            array('2017-07-26', BR::STATE_PB, array('name' => 'Homenagem à Memória do Ex-Presidente João Pessoa')),
+            array('2017-08-05', BR::STATE_PB, array('name' => 'Fundação do Estado')),
         );
     }
 }
