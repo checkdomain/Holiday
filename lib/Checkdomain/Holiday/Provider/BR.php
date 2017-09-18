@@ -35,6 +35,7 @@ class BR extends AbstractEaster
     const STATE_RO = 'Rondônia';
     const STATE_RR = 'Roraima';
     const STATE_SC = 'Santa Catarina';
+    const STATE_SP = 'São Paulo';
 
     /**
      * {@inheritdoc}
@@ -161,6 +162,9 @@ class BR extends AbstractEaster
         // Santa Catarina State Fixed
         $this->setHolidayForState($holidays, '07-09', self::STATE_SC, 'Revolução Constitucionalista');
         $this->setHolidayForState($holidays, '11-25', self::STATE_SC, 'Santa Catarina de Alexandria');
+
+        // São Paulo State Fixed
+        $this->setHolidayForState($holidays, '07-09', self::STATE_SP, 'Revolução Constitucionalista');
 
         return $holidays;
     }

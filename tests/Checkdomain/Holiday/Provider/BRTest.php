@@ -108,6 +108,8 @@ namespace Checkdomain\Holiday\Provider;
             // Santa Catarina State Fixed
             array('2017-07-09', BR::STATE_SC, array('name' => 'Revolução Constitucionalista')),
             array('2017-11-25', BR::STATE_SC, array('name' => 'Santa Catarina de Alexandria')),
+            // São Paulo State Fixed
+            array('2017-07-09', BR::STATE_SP, array('name' => 'Revolução Constitucionalista')),
         );
     }
 }
