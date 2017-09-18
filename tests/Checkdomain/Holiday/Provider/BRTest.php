@@ -100,6 +100,9 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-10-03', BR::STATE_RN, array('name' => 'Mártires de Cunhaú e Uruaçu')),
             // Rio Grande do Sul State Fixed
             array('2017-09-20', BR::STATE_RS, array('name' => 'Proclamação da República Rio-Grandense')),
+            // Rondônia State Fixed
+            array('2017-01-04', BR::STATE_RO, array('name' => 'Criação do Estado')),
+            array('2017-06-18', BR::STATE_RO, array('name' => 'Dia do Evangélico')),
         );
     }
 }
