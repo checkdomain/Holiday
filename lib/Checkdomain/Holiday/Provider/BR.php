@@ -21,7 +21,7 @@ class BR extends AbstractProvider
     const STATE_AM = 'Amazonas';
     const STATE_BA = 'Bahia';
     const STATE_CE = 'Ceará';
-    const STATE_DF = 'Distrito Federal'; // TODO District or State?
+    const STATE_DF = 'Distrito Federal';
     const STATE_ES = 'Espírito Santo';
     const STATE_GO = 'Goiás';
     const STATE_MA = 'Maranhão';
@@ -85,7 +85,8 @@ class BR extends AbstractProvider
         $this->setHolidayForState($holidays, '09-13', self::STATE_AP, 'Criação do Território Federal');
 
         // Amazonas State
-        $this->setHolidayForState($holidays, '09-05', self::STATE_AM, 'Feriado Estadual'); // Elevação do Amazonas à Categoria de Província
+        // Elevação do Amazonas à Categoria de Província
+        $this->setHolidayForState($holidays, '09-05', self::STATE_AM, 'Feriado Estadual');
         $this->setHolidayForState($holidays, '11-20', self::STATE_AM, 'Dia da Consciência Negra');
 
         // Bahia State
@@ -118,7 +119,12 @@ class BR extends AbstractProvider
         $this->setHolidayForState($holidays, '08-15', self::STATE_PA, 'Adesão do Grão-Pará à Independência do Brasil');
 
         // Paraíba State
-        $this->setHolidayForState($holidays, '07-26', self::STATE_PB, 'Homenagem à Memória do Ex-Presidente João Pessoa');
+        $this->setHolidayForState(
+            $holidays,
+            '07-26',
+            self::STATE_PB,
+            'Homenagem à Memória do Ex-Presidente João Pessoa'
+        );
         $this->setHolidayForState($holidays, '08-05', self::STATE_PB, 'Fundação do Estado');
 
         // Paraná State
