@@ -7,9 +7,13 @@ use DateTime;
 use DateTimeImmutable;
 
 /**
- * Brazilian holiday provider
+ * Brazilian Holiday Provider
+ *
+ * @see http://www.planalto.gov.br/ccivil_03/leis/L0662.htm
+ * @see http://www.planalto.gov.br/ccivil_03/leis/l6802.htm
+ * @see https://pt.wikipedia.org/wiki/Feriados_no_Brasil
  */
-class BR extends AbstractEaster
+class BR extends AbstractProvider
 {
     const STATE_AC = 'Acre';
     const STATE_AL = 'Alagoas';
@@ -45,14 +49,8 @@ class BR extends AbstractEaster
     public function getHolidaysByYear($year)
     {
         // Easter
-        $easterDates  = $this->getEasterDates($year);
-        $easterSunday = DateTimeImmutable::createFromMutable($easterDates['easterSunday']);
+        $easter = DateTimeImmutable::createFromFormat('U', easter_date($year));
 
-        /**
-         * @see http://www.planalto.gov.br/ccivil_03/leis/L0662.htm
-         * @see http://www.planalto.gov.br/ccivil_03/leis/l6802.htm
-         * @see https://pt.wikipedia.org/wiki/Feriados_no_Brasil
-         */
         $holidays = array(
             // National Fixed
             '01-01' => $this->createData('Confraternização Universal'),
@@ -64,9 +62,9 @@ class BR extends AbstractEaster
             '11-15' => $this->createData('Proclamação da República'),
             '12-25' => $this->createData('Natal'),
             // National Variable
-            $easterSunday->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT) => $this->createData('Carnaval'),
-            $easterSunday->sub(new DateInterval('P2D'))->format(self::DATE_FORMAT)  => $this->createData('Sexta-Feira Santa'),
-            $easterSunday->add(new DateInterval('P60D'))->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
+            $easter->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT) => $this->createData('Carnaval'),
+            $easter->sub(new DateInterval('P2D'))->format(self::DATE_FORMAT)  => $this->createData('Sexta-Feira Santa'),
+            $easter->add(new DateInterval('P60D'))->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
         );
 
         // Acre State
@@ -142,7 +140,7 @@ class BR extends AbstractEaster
         $this->setHolidayForState($holidays, '11-20', self::STATE_RJ, 'Dia da Consciência Negra');
         $this->setHolidayForState(
             $holidays,
-            $easterSunday->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT),
+            $easter->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT),
             self::STATE_RJ,
             'Carnaval'
         );
