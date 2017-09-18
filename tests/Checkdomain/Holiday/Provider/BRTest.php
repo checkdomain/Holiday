@@ -110,6 +110,12 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-11-25', BR::STATE_SC, array('name' => 'Santa Catarina de Alexandria')),
             // São Paulo State Fixed
             array('2017-07-09', BR::STATE_SP, array('name' => 'Revolução Constitucionalista')),
+            // Sergipe State Fixed
+            array('2017-07-08', BR::STATE_SE, array('name' => 'Emancipação Política')),
+            // Tocantins State Fixed
+            array('2017-03-18', BR::STATE_TO, array('name' => 'Autonomia do Estado')),
+            array('2017-09-08', BR::STATE_TO, array('name' => 'Padroeira do Estado')),
+            array('2017-10-05', BR::STATE_TO, array('name' => 'Criação do Estado')),
         );
     }
 }

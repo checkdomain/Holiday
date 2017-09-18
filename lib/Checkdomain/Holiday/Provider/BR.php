@@ -37,6 +37,7 @@ class BR extends AbstractEaster
     const STATE_SC = 'Santa Catarina';
     const STATE_SP = 'São Paulo';
     const STATE_SE = 'Sergipe';
+    const STATE_TO = 'Tocantins';
 
     /**
      * {@inheritdoc}
@@ -169,6 +170,11 @@ class BR extends AbstractEaster
 
         // Sergipe State Fixed
         $this->setHolidayForState($holidays, '07-08', self::STATE_SE, 'Emancipação Política');
+
+        // Tocantins State Fixed
+        $this->setHolidayForState($holidays, '03-18', self::STATE_TO, 'Autonomia do Estado');
+        $this->setHolidayForState($holidays, '09-08', self::STATE_TO, 'Padroeira do Estado');
+        $this->setHolidayForState($holidays, '10-05', self::STATE_TO, 'Criação do Estado');
 
         return $holidays;
     }
