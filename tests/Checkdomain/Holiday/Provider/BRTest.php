@@ -105,6 +105,9 @@ namespace Checkdomain\Holiday\Provider;
             array('2017-06-18', BR::STATE_RO, array('name' => 'Dia do Evangélico')),
             // Roraima State Fixed
             array('2017-10-05', BR::STATE_RR, array('name' => 'Criação do Estado')),
+            // Santa Catarina State Fixed
+            array('2017-07-09', BR::STATE_SC, array('name' => 'Revolução Constitucionalista')),
+            array('2017-11-25', BR::STATE_SC, array('name' => 'Santa Catarina de Alexandria')),
         );
     }
 }
