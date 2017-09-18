@@ -69,34 +69,34 @@ class BR extends AbstractEaster
             $easterSunday->add(new DateInterval('P60D'))->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
         );
 
-        // Acre State Fixed
+        // Acre State
         $this->setHolidayForState($holidays, '01-23', self::STATE_AC, 'Dia do Evangélico');
         $this->setHolidayForState($holidays, '03-08', self::STATE_AC, 'Alusivo ao Dia Internacional da Mulher');
         $this->setHolidayForState($holidays, '06-15', self::STATE_AC, 'Aniversário do Estado');
         $this->setHolidayForState($holidays, '09-05', self::STATE_AC, 'Feriado Estadual'); // Dia da Amazônia
         $this->setHolidayForState($holidays, '11-17', self::STATE_AC, 'Assinatura do Tratado de Petrópolis');
 
-        // Alagoas State Fixed
+        // Alagoas State
         $this->setHolidayForState($holidays, '06-24', self::STATE_AL, 'São João');
         $this->setHolidayForState($holidays, '06-29', self::STATE_AL, 'São Pedro');
         $this->setHolidayForState($holidays, '09-16', self::STATE_AL, 'Emancipação Política');
         $this->setHolidayForState($holidays, '11-20', self::STATE_AL, 'Dia da Consciência Negra');
 
-        // Amapá State Fixed
+        // Amapá State
         $this->setHolidayForState($holidays, '03-19', self::STATE_AP, 'São José');
         $this->setHolidayForState($holidays, '09-13', self::STATE_AP, 'Criação do Território Federal');
 
-        // Amazonas State Fixed
+        // Amazonas State
         $this->setHolidayForState($holidays, '09-05', self::STATE_AM, 'Feriado Estadual'); // Elevação do Amazonas à Categoria de Província
         $this->setHolidayForState($holidays, '11-20', self::STATE_AM, 'Dia da Consciência Negra');
 
-        // Bahia State Fixed
+        // Bahia State
         $this->setHolidayForState($holidays, '07-02', self::STATE_BA, 'Independência da Bahia');
 
-        // Ceará State Fixed
+        // Ceará State
         $this->setHolidayForState($holidays, '03-25', self::STATE_CE, 'Data da Abolição da Escravidão no Ceará');
 
-        // Distrito Federal District Fixed
+        // Distrito Federal District
         $this->setHolidayForState($holidays, '04-21', self::STATE_DF, 'Fundação de Brasília');
         $this->setHolidayForState($holidays, '11-30', self::STATE_DF, 'Dia do Evangélico');
 
@@ -104,29 +104,29 @@ class BR extends AbstractEaster
 
         // Goiás State (Without Holidays)
 
-        // Maranhão State Fixed
+        // Maranhão State
         $this->setHolidayForState($holidays, '07-28', self::STATE_MA, 'Adesão do Maranhão à Independência do Brasil');
 
-        // Mato Grosso State Fixed
+        // Mato Grosso State
         $this->setHolidayForState($holidays, '11-20', self::STATE_MT, 'Dia da Consciência Negra');
 
-        // Mato Grosso do Sul State Fixed
+        // Mato Grosso do Sul State
         $this->setHolidayForState($holidays, '10-11', self::STATE_MS, 'Criação do Estado');
 
-        // Minas Gerais State Fixed
+        // Minas Gerais State
         $this->setHolidayForState($holidays, '04-21', self::STATE_MG, 'Data Magna do Estado');
 
-        // Pará State Fixed
+        // Pará State
         $this->setHolidayForState($holidays, '08-15', self::STATE_PA, 'Adesão do Grão-Pará à Independência do Brasil');
 
-        // Paraíba State Fixed
+        // Paraíba State
         $this->setHolidayForState($holidays, '07-26', self::STATE_PB, 'Homenagem à Memória do Ex-Presidente João Pessoa');
         $this->setHolidayForState($holidays, '08-05', self::STATE_PB, 'Fundação do Estado');
 
-        // Paraná State Fixed
+        // Paraná State
         $this->setHolidayForState($holidays, '12-19', self::STATE_PR, 'Emancipação Política');
 
-        // Pernambuco State Variable
+        // Pernambuco State
         $this->setHolidayForState(
             $holidays,
             (new DateTime(sprintf('%s-03 first sunday', $year)))->format(self::DATE_FORMAT),
@@ -134,13 +134,12 @@ class BR extends AbstractEaster
             'Revolução Pernambucana'
         );
 
-        // Piauí State Fixed
+        // Piauí State
         $this->setHolidayForState($holidays, '10-19', self::STATE_PI, 'Dia do Piauí');
 
-        // Rio de Janeiro State Fixed
+        // Rio de Janeiro State
         $this->setHolidayForState($holidays, '04-23', self::STATE_RJ, 'São Jorge');
         $this->setHolidayForState($holidays, '11-20', self::STATE_RJ, 'Dia da Consciência Negra');
-        // Rio de Janeiro State Variable
         $this->setHolidayForState(
             $holidays,
             $easterSunday->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT),
@@ -148,30 +147,30 @@ class BR extends AbstractEaster
             'Carnaval'
         );
 
-        // Rio Grande do Norte State Fixed
+        // Rio Grande do Norte State
         $this->setHolidayForState($holidays, '10-03', self::STATE_RN, 'Mártires de Cunhaú e Uruaçu');
 
-        // Rio Grande do Sul State Fixed
+        // Rio Grande do Sul State
         $this->setHolidayForState($holidays, '09-20', self::STATE_RS, 'Proclamação da República Rio-Grandense');
 
-        // Rondônia State Fixed
+        // Rondônia State
         $this->setHolidayForState($holidays, '01-04', self::STATE_RO, 'Criação do Estado');
         $this->setHolidayForState($holidays, '06-18', self::STATE_RO, 'Dia do Evangélico');
 
-        // Roraima State Fixed
+        // Roraima State
         $this->setHolidayForState($holidays, '10-05', self::STATE_RR, 'Criação do Estado');
 
-        // Santa Catarina State Fixed
+        // Santa Catarina State
         $this->setHolidayForState($holidays, '07-09', self::STATE_SC, 'Revolução Constitucionalista');
         $this->setHolidayForState($holidays, '11-25', self::STATE_SC, 'Santa Catarina de Alexandria');
 
-        // São Paulo State Fixed
+        // São Paulo State
         $this->setHolidayForState($holidays, '07-09', self::STATE_SP, 'Revolução Constitucionalista');
 
-        // Sergipe State Fixed
+        // Sergipe State
         $this->setHolidayForState($holidays, '07-08', self::STATE_SE, 'Emancipação Política');
 
-        // Tocantins State Fixed
+        // Tocantins State
         $this->setHolidayForState($holidays, '03-18', self::STATE_TO, 'Autonomia do Estado');
         $this->setHolidayForState($holidays, '09-08', self::STATE_TO, 'Padroeira do Estado');
         $this->setHolidayForState($holidays, '10-05', self::STATE_TO, 'Criação do Estado');

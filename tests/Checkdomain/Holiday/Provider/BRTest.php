@@ -21,7 +21,7 @@ namespace Checkdomain\Holiday\Provider;
     public function dateProvider()
     {
         return array(
-            // National Fixed
+            // National Static
             array('2017-01-01', null, array('name' => 'Confraternização Universal')),
             array('2017-04-21', null, array('name' => 'Tiradentes')),
             array('2017-05-01', null, array('name' => 'Dia do Trabalhador')),
@@ -40,79 +40,107 @@ namespace Checkdomain\Holiday\Provider;
             array('2016-05-26', null, array('name' => 'Corpus Christi')),
             array('2017-06-15', null, array('name' => 'Corpus Christi')),
             array('2018-05-31', null, array('name' => 'Corpus Christi')),
-            // Acre State Fixed
+
+            // Acre State
             array('2017-01-23', BR::STATE_AC, array('name' => 'Dia do Evangélico')),
             array('2017-03-08', BR::STATE_AC, array('name' => 'Alusivo ao Dia Internacional da Mulher')),
             array('2016-06-15', BR::STATE_AC, array('name' => 'Aniversário do Estado')), // conflicts: 2017-06-15
             array('2017-09-05', BR::STATE_AC, array('name' => 'Feriado Estadual')),
             array('2017-11-17', BR::STATE_AC, array('name' => 'Assinatura do Tratado de Petrópolis')),
-            // Alagoas State Fixed
+
+            // Alagoas State
             array('2017-06-24', BR::STATE_AL, array('name' => 'São João')),
             array('2017-06-29', BR::STATE_AL, array('name' => 'São Pedro')),
             array('2017-09-16', BR::STATE_AL, array('name' => 'Emancipação Política')),
             array('2017-11-20', BR::STATE_AL, array('name' => 'Dia da Consciência Negra')),
-            // Amapá State Fixed
+
+            // Amapá State
             array('2017-03-19', BR::STATE_AP, array('name' => 'São José')),
             array('2017-09-13', BR::STATE_AP, array('name' => 'Criação do Território Federal')),
-            // Amazonas State Fixed
+
+            // Amazonas State
             array('2017-09-05', BR::STATE_AM, array('name' => 'Feriado Estadual')),
             array('2017-11-20', BR::STATE_AM, array('name' => 'Dia da Consciência Negra')),
-            // Bahia State Fixed
+
+            // Bahia State
             array('2017-07-02', BR::STATE_BA, array('name' => 'Independência da Bahia')),
-            // Ceará State Fixed
+
+            // Ceará State
             array('2017-03-25', BR::STATE_CE, array('name' => 'Data da Abolição da Escravidão no Ceará')),
-            // Distrito Federal District Fixed
+
+            // Distrito Federal District
             array('2017-04-21', BR::STATE_DF, array('name' => 'Tiradentes')), // Fundação de Brasília
             array('2017-11-30', BR::STATE_DF, array('name' => 'Dia do Evangélico')),
+
             // Espírito Santo State (Without Holidays)
             array('2017-01-01', BR::STATE_ES, array('name' => 'Confraternização Universal')),
+
             // Goiás State (Without Holidays)
             array('2017-01-01', BR::STATE_GO, array('name' => 'Confraternização Universal')),
-            // Maranhão State Fixed
+
+            // Maranhão State
             array('2017-07-28', BR::STATE_MA, array('name' => 'Adesão do Maranhão à Independência do Brasil')),
-            // Mato Grosso State Fixed
+
+            // Mato Grosso State
             array('2017-11-20', BR::STATE_MT, array('name' => 'Dia da Consciência Negra')),
-            // Mato Grosso do Sul State Fixed
+
+            // Mato Grosso do Sul State
             array('2017-10-11', BR::STATE_MS, array('name' => 'Criação do Estado')),
-            // Minas Gerais State Fixed
+
+            // Minas Gerais State
             array('2017-04-21', BR::STATE_MG, array('name' => 'Tiradentes')), // Data Magna do Estado
-            // Pará State Fixed
+
+            // Pará State
             array('2017-08-15', BR::STATE_PA, array('name' => 'Adesão do Grão-Pará à Independência do Brasil')),
-            // Paraíba State Fixed
+
+            // Paraíba State
             array('2017-07-26', BR::STATE_PB, array('name' => 'Homenagem à Memória do Ex-Presidente João Pessoa')),
             array('2017-08-05', BR::STATE_PB, array('name' => 'Fundação do Estado')),
-            // Paraná State Fixed
+
+            // Paraná State
             array('2017-12-19', BR::STATE_PR, array('name' => 'Emancipação Política')),
-            // Pernambuco State Variable
+
+            // Pernambuco State (Variable)
             array('2016-03-06', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
             array('2017-03-05', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
             array('2018-03-04', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
-            // Piauí State Fixed
+
+            // Piauí State
             array('2017-10-19', BR::STATE_PI, array('name' => 'Dia do Piauí')),
-            // Rio de Janeiro State Fixed
+
+            // Rio de Janeiro State
             array('2017-04-23', BR::STATE_RJ, array('name' => 'São Jorge')),
             array('2017-11-20', BR::STATE_RJ, array('name' => 'Dia da Consciência Negra')),
-            // Rio de Janeiro State Variable
+
+            // Rio de Janeiro State
             array('2016-02-09', BR::STATE_RJ, array('name' => 'Carnaval')),
             array('2017-02-28', BR::STATE_RJ, array('name' => 'Carnaval')),
             array('2018-02-13', BR::STATE_RJ, array('name' => 'Carnaval')),
-            // Rio Grande do Norte State Fixed
+
+            // Rio Grande do Norte State
             array('2017-10-03', BR::STATE_RN, array('name' => 'Mártires de Cunhaú e Uruaçu')),
-            // Rio Grande do Sul State Fixed
+
+            // Rio Grande do Sul State
             array('2017-09-20', BR::STATE_RS, array('name' => 'Proclamação da República Rio-Grandense')),
-            // Rondônia State Fixed
+
+            // Rondônia State
             array('2017-01-04', BR::STATE_RO, array('name' => 'Criação do Estado')),
             array('2017-06-18', BR::STATE_RO, array('name' => 'Dia do Evangélico')),
-            // Roraima State Fixed
+
+            // Roraima State
             array('2017-10-05', BR::STATE_RR, array('name' => 'Criação do Estado')),
-            // Santa Catarina State Fixed
+
+            // Santa Catarina State
             array('2017-07-09', BR::STATE_SC, array('name' => 'Revolução Constitucionalista')),
             array('2017-11-25', BR::STATE_SC, array('name' => 'Santa Catarina de Alexandria')),
-            // São Paulo State Fixed
+
+            // São Paulo State
             array('2017-07-09', BR::STATE_SP, array('name' => 'Revolução Constitucionalista')),
-            // Sergipe State Fixed
+
+            // Sergipe State
             array('2017-07-08', BR::STATE_SE, array('name' => 'Emancipação Política')),
-            // Tocantins State Fixed
+
+            // Tocantins State
             array('2017-03-18', BR::STATE_TO, array('name' => 'Autonomia do Estado')),
             array('2017-09-08', BR::STATE_TO, array('name' => 'Padroeira do Estado')),
             array('2017-10-05', BR::STATE_TO, array('name' => 'Criação do Estado')),
