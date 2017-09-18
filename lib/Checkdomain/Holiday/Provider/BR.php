@@ -61,7 +61,7 @@ class BR extends AbstractProvider
             '11-02' => $this->createData('Finados'),
             '11-15' => $this->createData('Proclamação da República'),
             '12-25' => $this->createData('Natal'),
-            // National Variable
+            // National Variable (and Optional)
             $easter->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT) => $this->createData('Carnaval'),
             $easter->sub(new DateInterval('P2D'))->format(self::DATE_FORMAT)  => $this->createData('Sexta-Feira Santa'),
             $easter->add(new DateInterval('P60D'))->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
@@ -72,7 +72,7 @@ class BR extends AbstractProvider
         $this->setHolidayForState($holidays, '03-08', self::STATE_AC, 'Alusivo ao Dia Internacional da Mulher');
         $this->setHolidayForState($holidays, '06-15', self::STATE_AC, 'Aniversário do Estado');
         $this->setHolidayForState($holidays, '09-05', self::STATE_AC, 'Feriado Estadual'); // Dia da Amazônia
-        $this->setHolidayForState($holidays, '11-17', self::STATE_AC, 'Assinatura do Tratado de Petrópolis');
+        $this->setHolidayForState($holidays, '11-17', self::STATE_AC, 'Assinatura do Tratado de Petrópolis'); // Opt
 
         // Alagoas State
         $this->setHolidayForState($holidays, '06-24', self::STATE_AL, 'São João');
