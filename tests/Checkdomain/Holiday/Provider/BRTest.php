@@ -3,7 +3,10 @@
 namespace Checkdomain\Holiday\Provider;
 
 /**
- * Class BRTest */ class BRTest extends AbstractTest
+ * Class BRTest
+ *
+ */
+class BRTest extends AbstractTest
 {
     /**
      * {@inheritdoc}
