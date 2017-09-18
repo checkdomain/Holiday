@@ -103,6 +103,8 @@ namespace Checkdomain\Holiday\Provider;
             // Rondônia State Fixed
             array('2017-01-04', BR::STATE_RO, array('name' => 'Criação do Estado')),
             array('2017-06-18', BR::STATE_RO, array('name' => 'Dia do Evangélico')),
+            // Roraima State Fixed
+            array('2017-10-05', BR::STATE_RR, array('name' => 'Criação do Estado')),
         );
     }
 }
