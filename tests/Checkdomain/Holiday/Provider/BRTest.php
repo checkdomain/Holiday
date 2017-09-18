@@ -89,6 +89,13 @@ namespace Checkdomain\Holiday\Provider;
             array('2018-03-04', BR::STATE_PE, array('name' => 'Revolução Pernambucana')),
             // Piauí State Fixed
             array('2017-10-19', BR::STATE_PI, array('name' => 'Dia do Piauí')),
+            // Rio de Janeiro State Fixed
+            array('2017-04-23', BR::STATE_RJ, array('name' => 'São Jorge')),
+            array('2017-11-20', BR::STATE_RJ, array('name' => 'Dia da Consciência Negra')),
+            // Rio de Janeiro State Variable
+            array('2016-02-09', BR::STATE_RJ, array('name' => 'Carnaval')),
+            array('2017-02-28', BR::STATE_RJ, array('name' => 'Carnaval')),
+            array('2018-02-13', BR::STATE_RJ, array('name' => 'Carnaval')),
         );
     }
 }

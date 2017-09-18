@@ -29,6 +29,7 @@ class BR extends AbstractEaster
     const STATE_PR = 'Paraná';
     const STATE_PE = 'Pernambuco';
     const STATE_PI = 'Piauí';
+    const STATE_RJ = 'Rio de Janeiro';
 
     /**
      * {@inheritdoc}
@@ -127,6 +128,17 @@ class BR extends AbstractEaster
 
         // Piauí State Fixed
         $this->setHolidayForState($holidays, '10-19', self::STATE_PI, 'Dia do Piauí');
+
+        // Rio de Janeiro State Fixed
+        $this->setHolidayForState($holidays, '04-23', self::STATE_RJ, 'São Jorge');
+        $this->setHolidayForState($holidays, '11-20', self::STATE_RJ, 'Dia da Consciência Negra');
+        // Rio de Janeiro State Variable
+        $this->setHolidayForState(
+            $holidays,
+            $easterSunday->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT),
+            self::STATE_RJ,
+            'Carnaval'
+        );
 
         return $holidays;
     }
