@@ -31,6 +31,7 @@ class BR extends AbstractEaster
     const STATE_PI = 'Piauí';
     const STATE_RJ = 'Rio de Janeiro';
     const STATE_RN = 'Rio Grande do Norte';
+    const STATE_RS = 'Rio Grande do Sul';
 
     /**
      * {@inheritdoc}
@@ -143,6 +144,9 @@ class BR extends AbstractEaster
 
         // Rio Grande do Norte State Fixed
         $this->setHolidayForState($holidays, '10-03', self::STATE_RN, 'Mártires de Cunhaú e Uruaçu');
+
+        // Rio Grande do Sul State Fixed
+        $this->setHolidayForState($holidays, '09-20', self::STATE_RS, 'Proclamação da República Rio-Grandense');
 
         return $holidays;
     }

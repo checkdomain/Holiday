@@ -98,6 +98,8 @@ namespace Checkdomain\Holiday\Provider;
             array('2018-02-13', BR::STATE_RJ, array('name' => 'Carnaval')),
             // Rio Grande do Norte State Fixed
             array('2017-10-03', BR::STATE_RN, array('name' => 'Mártires de Cunhaú e Uruaçu')),
+            // Rio Grande do Sul State Fixed
+            array('2017-09-20', BR::STATE_RS, array('name' => 'Proclamação da República Rio-Grandense')),
         );
     }
 }
