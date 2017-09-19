@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="Checkdomain Holidays Test Suite">
-            <directory>./tests</directory>
+            <directory>./test</directory>
         </testsuite>
     </testsuites>
 
@@ -23,7 +23,7 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>./tests</directory>
+                <directory>./test</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>
