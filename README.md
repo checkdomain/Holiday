@@ -25,7 +25,7 @@ To create a new Provider please see the `ProviderInterface` interface.
 
 ## Requirements
 
-Checkdomain/Holiday requires php >= 5.3.
+Checkdomain/Holiday requires php >= 5.5.
 
 
 ## Installation
