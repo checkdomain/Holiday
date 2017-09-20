@@ -6,8 +6,8 @@ php:
   - 7.0
   - 7.1
 
-script:
-  - phpunit
-
 install:
   - composer install
+
+script:
+  - phpunit
