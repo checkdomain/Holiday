@@ -35,7 +35,7 @@ The easiest way to install this library is through [composer](http://getcomposer
 ```json
 {
    "require": {
-        "checkdomain/holiday": "~2.0.0"
+        "checkdomain/holiday": "~3.0.0"
     }
 }
 ```
