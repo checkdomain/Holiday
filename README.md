@@ -40,7 +40,7 @@ The easiest way to install this library is through [composer](http://getcomposer
 }
 ```
 
-Another way would be to download this library and configure the autoloading yourself. This library relies on a [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) compatible autoloader for automatic class loading.
+Another way would be to download this library and configure the autoloading yourself. This library relies on a [PSR-4](http://www.php-fig.org/psr/psr-4/) compatible autoloader for automatic class loading.
 
 
 ## Usage
