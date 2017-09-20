@@ -59,4 +59,4 @@ If you need to know all holidays for a specific country you can instantiate one 
 
 ## Running Tests
 
-Run a `php composer.phar install` command in the base directory to install the `phpunit` dependency. After that you can simply call `vendor/bin/phpunit tests/` to run the test suite.
+Run a `php composer.phar install` command in the base directory to install the `phpunit` dependency. After that you can simply call `php vendor/bin/phpunit` to run the test suite.
