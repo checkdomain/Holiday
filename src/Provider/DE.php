@@ -37,6 +37,8 @@ class DE extends AbstractEaster
     {
         $easter = $this->getEasterDates($year);
 
+        $repentanceDay = $this->getDayOfRepentance($year);
+
         // 500th anniversay of the Reformation
         // @see https://de.wikipedia.org/wiki/Reformationstag#Deutschland
         if (2017 === $year) {
@@ -89,10 +91,26 @@ class DE extends AbstractEaster
                 self::STATE_NW,
                 self::STATE_RP,
                 self::STATE_SL,
+            )),
+            $repentanceDay->format(self::DATE_FORMAT) => $this->createData('Buß- und Bettag', array(
+                self::STATE_SN
             ))
         );
 
         return $holidays;
+    }
+
+    /**
+     * The German day of repentance is the wednesday befor the 23rd of November
+     * @param int $year
+     * @return \DateTime
+     */
+    public function getDayOfRepentance($year)
+    {
+        $date = new \DateTime($year.'-11-23');
+        $date->modify('previous wednesday');
+
+        return $date;
     }
 
 }
