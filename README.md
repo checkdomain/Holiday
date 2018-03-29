@@ -15,6 +15,11 @@ Checkdomain/Holiday is a small library to check if a specified date is a holiday
 - 🇵🇱  **PL** Poland
 - 🇵🇹  **PT** Portugal
 - 🇸🇪  **SE** Sweden
+- 🇷🇴  **RO** Romania
+- 🇭🇺  **HU** Hungary
+- 🇱🇻  **LV** Latvia
+- 🇱🇹  **LT** Lithuania
+- 🇪🇪  **EE** Estonia
 
 ## Your country is not supported?
 
@@ -60,3 +65,5 @@ If you need to know all holidays for a specific country you can instantiate one 
 ## Running Tests
 
 Run a `php composer.phar install` command in the base directory to install the `phpunit` dependency. After that you can simply call `php vendor/bin/phpunit` to run the test suite.
+
+To run specific test class call `php vendor/bin/phpunit --filter TestClassName`
