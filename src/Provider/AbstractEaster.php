@@ -7,18 +7,53 @@ namespace Checkdomain\Holiday\Provider;
  */
 abstract class AbstractEaster extends AbstractProvider
 {
+    /**
+     * Creating easter sunday
+     *
+     * @param $year
+     * @return \DateTime
+     */
+    private function createSunday($year)
+    {
+        $easterSunday = new \DateTime('21.03.' . $year);
+        $easterSunday->modify(sprintf('+%d days', easter_days($year)));
+
+        return $easterSunday;
+    }
+
+    /**
+     * Creating Orthodox easter sunday
+     *
+     * @param $year
+     * @return \DateTime
+     */
+    private function createOrthodoxSunday($year)
+    {
+        $a = $year % 4;
+        $b = $year % 7;
+        $c = $year % 19;
+        $d = (19 * $c + 15) % 30;
+        $e = (2 * $a + 4 * $b - $d + 34) % 7;
+        $month = floor(($d + $e + 114) / 31);
+        $day = (($d + $e + 114) % 31) + 1;
+
+        $sunday = mktime(0, 0, 0, $month, $day + 13, $year);
+
+        return new \DateTime(date('Y-m-d', $sunday));
+    }
 
     /**
      * Returns all dates calculated by easter sunday
      *
      * @param int $year
+     * @param boolean $orthodox
      *
      * @return \DateTime[]
      */
-    protected function getEasterDates($year)
+    protected function getEasterDates($year, $orthodox = false)
     {
-        $easterSunday = new \DateTime('21.03.'.$year);
-        $easterSunday->modify(sprintf('+%d days', easter_days($year)));
+        $easterSunday = $orthodox ? $this->createOrthodoxSunday($year) :  $this->createSunday($year);
+
         $easterSunday->setTimezone(new \DateTimeZone(date_default_timezone_get()));
 
         $easterMonday = clone $easterSunday;
@@ -43,16 +78,16 @@ abstract class AbstractEaster extends AbstractProvider
         $corpusChristi->modify('+60 days');
 
         return array(
-            'maundyThursday'    => $maundyThursday,
-            'easterSunday'      => $easterSunday,
-            'easterMonday'      => $easterMonday,
-            'saturday'          => $saturday,
-            'goodFriday'        => $goodFriday,
-            'ascensionDay'      => $ascensionDay,
+            'maundyThursday' => $maundyThursday,
+            'easterSunday' => $easterSunday,
+            'easterMonday' => $easterMonday,
+            'saturday' => $saturday,
+            'goodFriday' => $goodFriday,
+            'ascensionDay' => $ascensionDay,
             'pentecostSaturday' => $pentecostSaturday,
-            'pentecostSunday'   => $pentecostSunday,
-            'pentecostMonday'   => $pentecostMonday,
-            'corpusChristi'     => $corpusChristi
+            'pentecostSunday' => $pentecostSunday,
+            'pentecostMonday' => $pentecostMonday,
+            'corpusChristi' => $corpusChristi
         );
     }
 

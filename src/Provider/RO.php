@@ -20,7 +20,8 @@ class RO extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        // make i
+        $easter = $this->getEasterDates($year, true);
 
         $holidays = array(
             '01-01' => $this->createData('Anul Nou'),
@@ -35,6 +36,7 @@ class RO extends AbstractEaster
             '12-26' => $this->createData('Crăciunul'),
 
             // Easter dates
+            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Paștele'),
             $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Paștele'),
             $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Paștele'),
 
