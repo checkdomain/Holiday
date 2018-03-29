@@ -18,6 +18,8 @@ class ROTest extends AbstractTest
     /**
      * Provides some test dates and the expectation
      *
+     * vendor/bin/phpunit --filter ROTest
+     *
      * @return array
      */
     public function dateProvider()
@@ -40,16 +42,18 @@ class ROTest extends AbstractTest
             array('2018-12-26', null, array('name' => 'Crăciunul')),
 
             // Easter dates 2018
-            array('2018-04-01', null, array('name' => 'Paștele')),
-            array('2018-04-02', null, array('name' => 'Paștele')),
-            array('2018-05-20', null, array('name' => 'Rusaliile')),
-            array('2018-05-21', null, array('name' => 'Rusaliile')),
+            array('2018-04-06', null, array('name' => 'Paștele')),
+            array('2018-04-08', null, array('name' => 'Paștele')),
+            array('2018-04-09', null, array('name' => 'Paștele')),
+            array('2018-05-27', null, array('name' => 'Rusaliile')),
+            array('2018-05-28', null, array('name' => 'Rusaliile')),
 
             // Easter dates 2019
-            array('2019-04-21', null, array('name' => 'Paștele')),
-            array('2019-04-22', null, array('name' => 'Paștele')),
-            array('2019-06-09', null, array('name' => 'Rusaliile')),
-            array('2019-06-10', null, array('name' => 'Rusaliile')),
+            array('2019-04-26', null, array('name' => 'Paștele')),
+            array('2019-04-28', null, array('name' => 'Paștele')),
+            array('2019-04-29', null, array('name' => 'Paștele')),
+            array('2019-06-16', null, array('name' => 'Rusaliile')),
+            array('2019-06-17', null, array('name' => 'Rusaliile')),
         );
     }
 }
