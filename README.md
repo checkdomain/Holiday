@@ -9,17 +9,17 @@ Checkdomain/Holiday is a small library to check if a specified date is a holiday
 - 🇧🇷  **BR** Brazil
 - 🇩🇪  **DE** Germany
 - 🇩🇰  **DK** Denmark
+- 🇪🇪  **EE** Estonia
 - 🇫🇷  **FR** France
+- 🇭🇺  **HU** Hungary
 - 🇮🇹  **IT** Italy
+- 🇱🇹  **LT** Lithuania
+- 🇱🇻  **LV** Latvia
 - 🇳🇴  **NO** Norway
 - 🇵🇱  **PL** Poland
 - 🇵🇹  **PT** Portugal
-- 🇸🇪  **SE** Sweden
 - 🇷🇴  **RO** Romania
-- 🇭🇺  **HU** Hungary
-- 🇱🇻  **LV** Latvia
-- 🇱🇹  **LT** Lithuania
-- 🇪🇪  **EE** Estonia
+- 🇸🇪  **SE** Sweden
 
 ## Your country is not supported?
 
