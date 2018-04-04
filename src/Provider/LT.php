@@ -21,10 +21,10 @@ class LT extends AbstractEaster
     public function getHolidaysByYear($year)
     {
         $easter = $this->getEasterDates($year);
-        
+
         $mothersDay = date('m-d', strtotime('first Sunday of May '. $year));
         $fathersDay = date('m-d', strtotime('first Sunday of June '. $year));
-        
+
         $holidays = array(
             '01-01' => $this->createData('Naujieji metai'),
             '02-16' => $this->createData('Lietuvos valstybės atkūrimo diena'),
@@ -41,7 +41,7 @@ class LT extends AbstractEaster
             // floating days
             $mothersDay => $this->createData('Motinos diena'),
             $fathersDay => $this->createData('Tėvo diena'),
-            
+
             // Easter dates
             $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Velykos'),
         );
