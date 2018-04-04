@@ -36,7 +36,7 @@ class LV extends AbstractEaster
             '12-25' => $this->createData('Ziemassvētki'),
             '12-26' => $this->createData('Otrie Ziemassvētki'),
             '12-31' => $this->createData('Vecgada vakars'),
-            
+
             // Easter dates
             $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Lielā Piektdiena'),
             $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Lieldienas'),
