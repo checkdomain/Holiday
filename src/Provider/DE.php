@@ -50,6 +50,10 @@ class DE extends AbstractEaster
                 self::STATE_SN,
                 self::STATE_ST,
                 self::STATE_TH,
+                self::STATE_SH,
+                self::STATE_HH,
+                self::STATE_NI,
+                self::STATE_HB
             );
         }
 
