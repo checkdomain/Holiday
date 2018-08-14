@@ -31,7 +31,7 @@ class DETest extends AbstractTest
             array('2014-06-19', DE::STATE_SH, null),
             array('2014-11-01', DE::STATE_BW, array('name' => 'Allerheiligen')),
             array('2014-11-01', DE::STATE_SH, null),
-            array('2016-10-31', DE::STATE_SH, null),
+            array('2016-10-31', DE::STATE_SH, array('name' => 'Reformationstag')),
             array('2016-10-31', DE::STATE_BB, array('name' => 'Reformationstag')),
             array('2017-10-31', DE::STATE_SH, array('name' => 'Reformationstag')),
             array('2017-10-31', DE::STATE_BB, array('name' => 'Reformationstag')),
