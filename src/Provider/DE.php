@@ -82,9 +82,16 @@ class DE extends AbstractEaster
 
             // Variable dates
             $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
+            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', array(
+                self::STATE_BB,
+                self::STATE_HE,
+            )),
             $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
             $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
+            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pfingstsonntag', array(
+                self::STATE_BB,
+                self::STATE_HE,
+            )),
             $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
 
             // Variable with states
