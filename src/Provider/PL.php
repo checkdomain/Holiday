@@ -34,6 +34,7 @@ class PL extends AbstractEaster
             $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Wielkanoc'),
             $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Poniedziałek Wielkanocny'),
             $easter['corpusChristi']->format(self::DATE_FORMAT)    => $this->createData('Boże Ciało'),
+            $easter['pentecostSunday']->format(self::DATE_FORMAT)    => $this->createData('Zielone Świątki'),
         );
     }
 }
