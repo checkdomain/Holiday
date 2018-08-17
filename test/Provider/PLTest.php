@@ -38,6 +38,8 @@ class PLTest extends AbstractTest
             array('2015-05-01', null, array('name' => 'Święto Pracy')),
             array('2016-12-26', null, array('name' => 'Drugi dzień Bożego Narodzenia')),
             array('2016-08-15', null, array('name' => 'Wniebowzięcie Najświętszej Maryi Panny')),
+            array('2019-06-09', null, array('name' => 'Zielone Świątki')),
+            array('2020-05-31', null, array('name' => 'Zielone Świątki')),
         );
     }
 }
