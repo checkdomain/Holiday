@@ -2,13 +2,15 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * German holiday provider
  *
  * @author Benjamin Paap <benjamin.paap@gmail.com>
  * @since 2014-01-02
  */
-class DE extends AbstractEaster
+class DE extends AbstractProvider
 {
 
     const STATE_BW = 'Baden-Württemberg';
@@ -35,7 +37,7 @@ class DE extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $repentanceDay = $this->getDayOfRepentance($year);
 
@@ -81,21 +83,21 @@ class DE extends AbstractEaster
             )),
 
             // Variable dates
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', array(
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)      => $this->createData('Karfreitag'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('Ostersonntag', array(
                 self::STATE_BB,
                 self::STATE_HE,
             )),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pfingstsonntag', array(
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('Ostermontag'),
+            $easter->getDate(EasterUtil::ASCENSION_DAY)    => $this->createData('Christi Himmelfahrt'),
+            $easter->getDate(EasterUtil::PENTECOST_SUNDAY) => $this->createData('Pfingstsonntag', array(
                 self::STATE_BB,
                 self::STATE_HE,
             )),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
+            $easter->getDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('Pfingstmontag'),
 
             // Variable with states
-            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam', array(
+            $easter->getDate(EasterUtil::CORPUS_CHRISTI)   => $this->createData('Fronleichnam', array(
                 self::STATE_BW,
                 self::STATE_BY,
                 self::STATE_HE,

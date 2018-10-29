@@ -2,6 +2,8 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Latvian non-working holidays provider
  *
@@ -9,7 +11,7 @@ namespace Checkdomain\Holiday\Provider;
  * @since 2018-03-27
  * @see https://en.wikipedia.org/wiki/Public_holidays_in_Latvia
  */
-class LV extends AbstractEaster
+class LV extends AbstractProvider
 {
     /**
      * Getting non-working holidays
@@ -20,7 +22,7 @@ class LV extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $mothersDay = date('m-d', strtotime('second Sunday of May '. $year));
 
@@ -38,9 +40,9 @@ class LV extends AbstractEaster
             '12-31' => $this->createData('Vecgada vakars'),
 
             // Easter dates
-            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Lielā Piektdiena'),
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Lieldienas'),
-            $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Otrās Lieldienas'),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)   => $this->createData('Lielā Piektdiena'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY) => $this->createData('Lieldienas'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY) => $this->createData('Otrās Lieldienas'),
         );
 
         return $holidays;

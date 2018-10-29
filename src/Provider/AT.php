@@ -2,6 +2,8 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Austrian holiday provider.
  * 
@@ -10,7 +12,7 @@ namespace Checkdomain\Holiday\Provider;
  * @author Robert Scherer <rs@scherer-software.de>
  * @since 2015-08-14
  */
-class AT extends AbstractEaster
+class AT extends AbstractProvider
 {
 
 	const STATE_B = 'Burgenland';
@@ -30,7 +32,7 @@ class AT extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             // Fixed dates
@@ -45,11 +47,11 @@ class AT extends AbstractEaster
             '12-26' => $this->createData('Stefanitag'),
 
             // Variable dates
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Ostermontag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Christi Himmelfahrt'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pfingstmontag'),
-            $easter['corpusChristi']->format(self::DATE_FORMAT)   => $this->createData('Fronleichnam'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('Ostersonntag'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('Ostermontag'),
+            $easter->getDate(EasterUtil::ASCENSION_DAY)    => $this->createData('Christi Himmelfahrt'),
+            $easter->getDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('Pfingstmontag'),
+            $easter->getDate(EasterUtil::CORPUS_CHRISTI)   => $this->createData('Fronleichnam'),
         );
 
         return $holidays;

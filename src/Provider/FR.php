@@ -2,13 +2,15 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * French holiday provider
  *
  * @author Vincent Touzet <vincent.touzet@gmail.com>
  * @since 2014-01-03
  */
-class FR extends AbstractEaster
+class FR extends AbstractProvider
 {
 
     /**
@@ -18,7 +20,7 @@ class FR extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             '01-01' => $this->createData('Jour de l\'an'),
@@ -30,9 +32,9 @@ class FR extends AbstractEaster
             '11-11' => $this->createData('Armistice'),
             '12-25' => $this->createData('Noël'),
             // Variable dates
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Lundi de Pâques'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Jeudi de l\'Ascension'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT)    => $this->createData('Lundi de Pentecôte'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('Lundi de Pâques'),
+            $easter->getDate(EasterUtil::ASCENSION_DAY)    => $this->createData('Jeudi de l\'Ascension'),
+            $easter->getDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('Lundi de Pentecôte'),
         );
 
         return $holidays;

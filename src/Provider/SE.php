@@ -2,13 +2,15 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Swedish holiday provider
  *
  * @author Martin Lindhe
  * @since 2015-03-22
  **/
-class SE extends AbstractEaster
+class SE extends AbstractProvider
 {
 
     /**
@@ -18,7 +20,7 @@ class SE extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $midSummerDay = $this->getMidSummerDay($year);
 
@@ -36,14 +38,14 @@ class SE extends AbstractEaster
             '12-26' => $this->createData('Annandag jul'),
             '12-31' => $this->createData('Nyårsafton'),
             // Variable dates
-            $easter['maundyThursday']->format(self::DATE_FORMAT) => $this->createData('Skärtorsdagen', array('halfday' => true)),
-            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Långfredagen'),
-            $easter['saturday']->format(self::DATE_FORMAT) => $this->createData('Påskafton'),
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Påskdagen'),
-            $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Annandag påsk'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT) => $this->createData('Kristi himmelsfärdsdag'),
-            $easter['pentecostSaturday']->format(self::DATE_FORMAT) => $this->createData('Pingstafton'),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pingstdagen'),
+            $easter->getDate(EasterUtil::MAUNDY_THURSDAY) => $this->createData('Skärtorsdagen', array('halfday' => true)),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY) => $this->createData('Långfredagen'),
+            $easter->getDate(EasterUtil::EASTER_SATURDAY) => $this->createData('Påskafton'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY) => $this->createData('Påskdagen'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY) => $this->createData('Annandag påsk'),
+            $easter->getDate(EasterUtil::ASCENSION_DAY) => $this->createData('Kristi himmelsfärdsdag'),
+            $easter->getDate(EasterUtil::PENTECOST_SATURDAY) => $this->createData('Pingstafton'),
+            $easter->getDate(EasterUtil::PENTECOST_SUNDAY) => $this->createData('Pingstdagen'),
 
             $midSummerDay->format(self::DATE_FORMAT) => $this->createData('Midsommardagen'),
             $midSummerDay->modify('-1 day')->format(self::DATE_FORMAT) => $this->createData('Midsommarafton'),

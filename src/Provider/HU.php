@@ -2,6 +2,8 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Hungarian non-working holidays provider
  *
@@ -9,7 +11,7 @@ namespace Checkdomain\Holiday\Provider;
  * @since 2018-03-27
  * @see https://en.wikipedia.org/wiki/Public_holidays_in_Hungary
  */
-class HU extends AbstractEaster
+class HU extends AbstractProvider
 {
     /**
      *
@@ -22,7 +24,7 @@ class HU extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
            '01-01' => $this->createData('Újév'),
@@ -35,16 +37,16 @@ class HU extends AbstractEaster
            '12-26' => $this->createData('Karácsony'),
 
             // Easter dates
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Húsvétvasárnap'),
-            $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Húsvéthétfő'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY) => $this->createData('Húsvétvasárnap'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY) => $this->createData('Húsvéthétfő'),
 
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pünkösdvasárnap'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Pünkösdhétfő'),
+            $easter->getDate(EasterUtil::PENTECOST_SUNDAY) => $this->createData('Pünkösdvasárnap'),
+            $easter->getDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('Pünkösdhétfő'),
         );
 
         //add holidays post 2017
         if ($year >= 2017) {
-            $holidays[$easter['goodFriday']->format(self::DATE_FORMAT)] = $this->createData('Nagypéntek');
+            $holidays[$easter->getDate(EasterUtil::GOOD_FRIDAY)] = $this->createData('Nagypéntek');
         }
 
         return $holidays;

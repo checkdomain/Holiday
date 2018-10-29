@@ -2,6 +2,7 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
 use DateTime;
 
 /**
@@ -11,7 +12,7 @@ use DateTime;
  * @see http://www.planalto.gov.br/ccivil_03/leis/l6802.htm
  * @see https://pt.wikipedia.org/wiki/Feriados_no_Brasil
  */
-class BR extends AbstractEaster
+class BR extends AbstractProvider
 {
     const STATE_AC = 'Acre';
     const STATE_AL = 'Alagoas';
@@ -46,7 +47,7 @@ class BR extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             // National Fixed
@@ -58,10 +59,11 @@ class BR extends AbstractEaster
             '11-02' => $this->createData('Finados'),
             '11-15' => $this->createData('Proclamação da República'),
             '12-25' => $this->createData('Natal'),
+
             // National Variable (and Optional)
-            $easter['shroveTuesday']->format(self::DATE_FORMAT) => $this->createData('Carnaval'),
-            $easter['goodFriday']->format(self::DATE_FORMAT)  => $this->createData('Sexta-Feira Santa'),
-            $easter['corpusChristi']->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
+            $easter->getDate(EasterUtil::SHROVE_TUESDAY) => $this->createData('Carnaval'),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)    => $this->createData('Sexta-Feira Santa'),
+            $easter->getDate(EasterUtil::CORPUS_CHRISTI) => $this->createData('Corpus Christi'),
         );
 
         // Acre State

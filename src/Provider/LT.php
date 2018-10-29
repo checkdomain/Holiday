@@ -2,6 +2,8 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Lithuanian non-working holidays provider
  *
@@ -9,7 +11,7 @@ namespace Checkdomain\Holiday\Provider;
  * @since 2018-03-27
  * @see https://en.wikipedia.org/wiki/Public_holidays_in_Lithuania
  */
-class LT extends AbstractEaster
+class LT extends AbstractProvider
 {
     /**
      * Getting non-working holidays
@@ -20,7 +22,7 @@ class LT extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $mothersDay = date('m-d', strtotime('first Sunday of May '. $year));
         $fathersDay = date('m-d', strtotime('first Sunday of June '. $year));
@@ -43,7 +45,7 @@ class LT extends AbstractEaster
             $fathersDay => $this->createData('Tėvo diena'),
 
             // Easter dates
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Velykos'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY) => $this->createData('Velykos'),
         );
 
         return $holidays;

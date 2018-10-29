@@ -2,12 +2,14 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Polish holiday provider
  *
  * @author Przemek Sztuczyński <psztuczynski@gmail.com>
  **/
-class PL extends AbstractEaster
+class PL extends AbstractProvider
 {
 
     /**
@@ -17,7 +19,7 @@ class PL extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         return array(
             '01-01' => $this->createData('Nowy Rok'),
@@ -31,10 +33,10 @@ class PL extends AbstractEaster
             '12-26' => $this->createData('Drugi dzień Bożego Narodzenia'),
 
             // Variable dates
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Wielkanoc'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Poniedziałek Wielkanocny'),
-            $easter['corpusChristi']->format(self::DATE_FORMAT)    => $this->createData('Boże Ciało'),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT)    => $this->createData('Zielone Świątki'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('Wielkanoc'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('Poniedziałek Wielkanocny'),
+            $easter->getDate(EasterUtil::CORPUS_CHRISTI)    => $this->createData('Boże Ciało'),
+            $easter->getDate(EasterUtil::PENTECOST_SUNDAY)    => $this->createData('Zielone Świątki'),
         );
     }
 }

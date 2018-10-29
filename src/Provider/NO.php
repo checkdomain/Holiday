@@ -2,13 +2,15 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Norwegian holiday provider
  *
  * @author Kristian Lunde <kristian@klunde.net>
  * @since 2014-04-18
  **/
-class NO extends AbstractEaster
+class NO extends AbstractProvider
 {
 
     /**
@@ -18,7 +20,7 @@ class NO extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         return array(
             '01-01' => $this->createData('1. nyttårsdag'),
@@ -27,12 +29,12 @@ class NO extends AbstractEaster
             '12-25' => $this->createData('1. juledag'),
             '12-26' => $this->createData('2. juledag'),
             // Variable dates
-			$easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skjærtorsdag'),
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('1. påskedag'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. påskedag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. pinsedag'),
+            $easter->getDate(EasterUtil::MAUNDY_THURSDAY)  => $this->createData('Skjærtorsdag'),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)      => $this->createData('Langfredag'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('1. påskedag'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('2. påskedag'),
+            $easter->getDate(EasterUtil::ASCENSION_DAY)    => $this->createData('Kristi Himmelfartsdag'),
+            $easter->getDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('2. pinsedag'),
 		);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Romanian non-working holidays provider
  *
@@ -9,7 +11,7 @@ namespace Checkdomain\Holiday\Provider;
  * @since 2018-03-27
  * @see https://en.wikipedia.org/wiki/Public_holidays_in_Romania
  */
-class RO extends AbstractEaster
+class RO extends AbstractProvider
 {
     /**
      * Getting non-working holidays
@@ -21,7 +23,7 @@ class RO extends AbstractEaster
     public function getHolidaysByYear($year)
     {
         // make i
-        $easter = $this->getEasterDates($year, true);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             '01-01' => $this->createData('Anul Nou'),
@@ -36,12 +38,12 @@ class RO extends AbstractEaster
             '12-26' => $this->createData('Crăciunul'),
 
             // Easter dates
-            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('Paștele'),
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('Paștele'),
-            $easter['easterMonday']->format(self::DATE_FORMAT) => $this->createData('Paștele'),
+            $easter->getOrthodoxDate(EasterUtil::GOOD_FRIDAY) => $this->createData('Paștele'),
+            $easter->getOrthodoxDate(EasterUtil::EASTER_SUNDAY) => $this->createData('Paștele'),
+            $easter->getOrthodoxDate(EasterUtil::EASTER_MONDAY) => $this->createData('Paștele'),
 
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Rusaliile'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('Rusaliile'),
+            $easter->getOrthodoxDate(EasterUtil::PENTECOST_SUNDAY) => $this->createData('Rusaliile'),
+            $easter->getOrthodoxDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('Rusaliile'),
         );
 
         //add holidays post 2017

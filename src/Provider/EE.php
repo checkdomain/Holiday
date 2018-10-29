@@ -2,6 +2,8 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Estonian non-working holidays provider
  *
@@ -9,7 +11,7 @@ namespace Checkdomain\Holiday\Provider;
  * @since 2018-03-27
  * @see https://en.wikipedia.org/wiki/Public_holidays_in_Estonia
  */
-class EE extends AbstractEaster
+class EE extends AbstractProvider
 {
     /**
      * Getting non-working holidays
@@ -20,7 +22,7 @@ class EE extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
 
@@ -35,10 +37,9 @@ class EE extends AbstractEaster
             '12-26' => $this->createData('teine jõulupüha'),
 
             // Easter dates
-            $easter['goodFriday']->format(self::DATE_FORMAT) => $this->createData('suur reede'),
-            $easter['easterSunday']->format(self::DATE_FORMAT) => $this->createData('ülestõusmispühade 1. püha'),
-
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('nelipühade 1. püha'),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)      => $this->createData('suur reede'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('ülestõusmispühade 1. püha'),
+            $easter->getDate(EasterUtil::PENTECOST_SUNDAY) => $this->createData('nelipühade 1. püha'),
         );
 
         return $holidays;

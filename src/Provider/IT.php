@@ -2,13 +2,15 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Italian holiday provider
  *
  * @author Giorgio Cefaro <giorgio.cefaro@gmail.com>
  * @since 2015-11-03
  */
-class IT extends AbstractEaster
+class IT extends AbstractProvider
 {
 
     /**
@@ -18,7 +20,7 @@ class IT extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             '01-01' => $this->createData('Capodanno'),
@@ -32,8 +34,8 @@ class IT extends AbstractEaster
             '12-25' => $this->createData('Natale di Gesù'),
             '12-26' => $this->createData('Santo Stefano'),
             // Variable dates
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Pasqua'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('Lunedì di Pasqua'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('Pasqua'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('Lunedì di Pasqua'),
         );
 
         return $holidays;

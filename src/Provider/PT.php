@@ -2,12 +2,14 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Portugal holiday provider
  *
  * @author Tiago Carvalho <tiago.carvalho@beubi.com>
  */
-class PT extends AbstractEaster
+class PT extends AbstractProvider
 {
 
     /**
@@ -17,7 +19,7 @@ class PT extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             '01-01' => $this->createData('Ano Novo'),
@@ -28,8 +30,8 @@ class PT extends AbstractEaster
             '12-08' => $this->createData('Dia da Imaculada Conceição'),
             '12-25' => $this->createData('Natal'),
             // Variable dates
-            $easter['goodFriday']->format(self::DATE_FORMAT)    => $this->createData('Sexta-Feira Santa'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Páscoa'),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)   => $this->createData('Sexta-Feira Santa'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY) => $this->createData('Páscoa'),
         );
         //add holidays post 2015
         if ($year >= 2016) {

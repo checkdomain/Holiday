@@ -2,13 +2,15 @@
 
 namespace Checkdomain\Holiday\Provider;
 
+use Checkdomain\Holiday\Helper\EasterUtil;
+
 /**
  * Denmark holiday provider
  *
  * @author Florian Körner <contact@florian-koerner.com>
  * @since 2015-10-15
  */
-class DK extends AbstractEaster
+class DK extends AbstractProvider
 {
     /**
      * @param int $year
@@ -17,10 +19,7 @@ class DK extends AbstractEaster
      */
     public function getHolidaysByYear($year)
     {
-        $easter = $this->getEasterDates($year);
-
-        $greatPrayerDay = clone $easter['easterSunday'];
-        $greatPrayerDay->modify('+26 days');
+        $easter = new EasterUtil($year);
 
         $holidays = array(
             '01-01' => $this->createData('Nytår'),
@@ -28,14 +27,14 @@ class DK extends AbstractEaster
             '12-26' => $this->createData('2. Juledag'),
 
             // Variable dates
-            $easter['maundyThursday']->format(self::DATE_FORMAT)  => $this->createData('Skærtorsdag'),
-            $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Langfredag'),
-            $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Påskedag'),
-            $easter['easterMonday']->format(self::DATE_FORMAT)    => $this->createData('2. Påskedag'),
-            $greatPrayerDay->format(self::DATE_FORMAT)            => $this->createData('Store Bededag'),
-            $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Kristi Himmelfartsdag'),
-            $easter['pentecostSunday']->format(self::DATE_FORMAT) => $this->createData('Pinsedag'),
-            $easter['pentecostMonday']->format(self::DATE_FORMAT) => $this->createData('2. Pinsedag')
+            $easter->getDate(EasterUtil::MAUNDY_THURSDAY)  => $this->createData('Skærtorsdag'),
+            $easter->getDate(EasterUtil::GOOD_FRIDAY)      => $this->createData('Langfredag'),
+            $easter->getDate(EasterUtil::EASTER_SUNDAY)    => $this->createData('Påskedag'),
+            $easter->getDate(EasterUtil::EASTER_MONDAY)    => $this->createData('2. Påskedag'),
+            $easter->getDate(26)                           => $this->createData('Store Bededag'),
+            $easter->getDate(EasterUtil::ASCENSION_DAY)    => $this->createData('Kristi Himmelfartsdag'),
+            $easter->getDate(EasterUtil::PENTECOST_SUNDAY) => $this->createData('Pinsedag'),
+            $easter->getDate(EasterUtil::PENTECOST_MONDAY) => $this->createData('2. Pinsedag')
         );
 
         return $holidays;
