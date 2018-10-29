@@ -2,9 +2,7 @@
 
 namespace Checkdomain\Holiday\Provider;
 
-use DateInterval;
 use DateTime;
-use DateTimeImmutable;
 
 /**
  * Brazilian Holiday Provider
@@ -13,7 +11,7 @@ use DateTimeImmutable;
  * @see http://www.planalto.gov.br/ccivil_03/leis/l6802.htm
  * @see https://pt.wikipedia.org/wiki/Feriados_no_Brasil
  */
-class BR extends AbstractProvider
+class BR extends AbstractEaster
 {
     const STATE_AC = 'Acre';
     const STATE_AL = 'Alagoas';
@@ -48,8 +46,7 @@ class BR extends AbstractProvider
      */
     public function getHolidaysByYear($year)
     {
-        // Easter
-        $easter = DateTimeImmutable::createFromFormat('U', easter_date($year));
+        $easter = $this->getEasterDates($year);
 
         $holidays = array(
             // National Fixed
@@ -62,9 +59,9 @@ class BR extends AbstractProvider
             '11-15' => $this->createData('Proclamação da República'),
             '12-25' => $this->createData('Natal'),
             // National Variable (and Optional)
-            $easter->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT) => $this->createData('Carnaval'),
-            $easter->sub(new DateInterval('P2D'))->format(self::DATE_FORMAT)  => $this->createData('Sexta-Feira Santa'),
-            $easter->add(new DateInterval('P60D'))->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
+            $easter['shroveTuesday']->format(self::DATE_FORMAT) => $this->createData('Carnaval'),
+            $easter['goodFriday']->format(self::DATE_FORMAT)  => $this->createData('Sexta-Feira Santa'),
+            $easter['corpusChristi']->format(self::DATE_FORMAT) => $this->createData('Corpus Christi'),
         );
 
         // Acre State
@@ -144,12 +141,6 @@ class BR extends AbstractProvider
         // Rio de Janeiro State
         $this->setHolidayForState($holidays, '04-23', self::STATE_RJ, 'São Jorge');
         $this->setHolidayForState($holidays, '11-20', self::STATE_RJ, 'Dia da Consciência Negra');
-        $this->setHolidayForState(
-            $holidays,
-            $easter->sub(new DateInterval('P47D'))->format(self::DATE_FORMAT),
-            self::STATE_RJ,
-            'Carnaval'
-        );
 
         // Rio Grande do Norte State
         $this->setHolidayForState($holidays, '10-03', self::STATE_RN, 'Mártires de Cunhaú e Uruaçu');
