@@ -40,7 +40,9 @@ class EasterUtil
 
 
     /**
-     * @param int $offsetDays
+     * Calculates a date relative to Easter Sunday
+     *
+     * @param int $offsetDays Offset (in days) from Easter Sunday
      *
      * @return string
      */
@@ -53,7 +55,9 @@ class EasterUtil
 
 
     /**
-     * @param int $offsetDays
+     * Calculates a date relative to Easter Sunday according to the Julian calendar
+     *
+     * @param int $offsetDays Offset (in days) from Easter Sunday
      *
      * @return string
      */
@@ -61,6 +65,8 @@ class EasterUtil
     {
         $dayDiff = easter_days($this->year, CAL_EASTER_ALWAYS_JULIAN) + $offsetDays;
 
+        // We still want a Gregorian date, that's why the date is offset from April 3rd
+        // (which is March 21st in Julian calendar.)
         return date('m-d', strtotime($this->year.'-04-03 +'.$dayDiff.' days'));
     }
 }
