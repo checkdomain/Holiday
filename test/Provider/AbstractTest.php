@@ -5,7 +5,7 @@ namespace Checkdomain\Holiday\Provider;
 /**
  * Class AbstractTest
  */
-abstract class AbstractTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Checkdomain\Holiday\ProviderInterface
