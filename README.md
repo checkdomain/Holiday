@@ -14,6 +14,7 @@ Checkdomain/Holiday is a small library to check if a specified date is a holiday
 - 🇭🇺  **HU** Hungary
 - 🇮🇹  **IT** Italy
 - 🇱🇹  **LT** Lithuania
+- 🇱🇺  **LU** Luxembourg
 - 🇱🇻  **LV** Latvia
 - 🇳🇴  **NO** Norway
 - 🇵🇱  **PL** Poland
