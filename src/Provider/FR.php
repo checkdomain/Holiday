@@ -10,6 +10,7 @@ namespace Checkdomain\Holiday\Provider;
  */
 class FR extends AbstractEaster
 {
+    const STATE_AM = 'Alsace-Moselle';
 
     /**
      * @param int $year
@@ -34,6 +35,14 @@ class FR extends AbstractEaster
             $easter['ascensionDay']->format(self::DATE_FORMAT)    => $this->createData('Jeudi de l\'Ascension'),
             $easter['pentecostMonday']->format(self::DATE_FORMAT)    => $this->createData('Lundi de Pentecôte'),
         );
+
+        $holidays[$easter['goodFriday']->format(self::DATE_FORMAT)] = $this->createData('Vendredi Saint', array(
+            self::STATE_AM,
+        ));
+
+        $holidays['12-26'] = $this->createData('Saint Etienne', array(
+            self::STATE_AM,
+        ));
 
         return $holidays;
     }

@@ -35,6 +35,8 @@ class FRTest extends AbstractTest
             array('2014-11-01', null, array('name' => 'La Toussaint')),
             array('2014-11-11', null, array('name' => 'Armistice')),
             array('2014-12-25', null, array('name' => 'Noël')),
+            array('2014-12-26', FR::STATE_AM, array('name' => 'Saint Etienne')),
+            array('2014-04-18', FR::STATE_AM, array('name' => 'Vendredi Saint')),
         );
     }
 } 
