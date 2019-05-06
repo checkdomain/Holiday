@@ -16,33 +16,6 @@ class FRTest extends AbstractTest
     }
 
     /**
-     * @param string $date
-     * @param string $state
-     * @param array  $expectation
-     *
-     * @dataProvider dateProvider
-     */
-    public function testHolidays($date, $state = null, array $expectation = null)
-    {
-        $date    = new \DateTime($date);
-        $holiday = $this->provider->getHolidayByDate($date, $state);
-
-        if ($expectation === null) {
-            $this->assertNull($holiday);
-        } else {
-            $this->assertNotNull($holiday, 'No Holiday found but assumed to find one on '.$date->format('Y-m-d'));
-            $this->assertEquals($date->format('d.m.Y'), $holiday->getDate()->format('d.m.Y'));
-
-            foreach ($expectation as $property => $expectedValue) {
-                $method = 'get'.ucfirst($property);
-                $value = $holiday->$method();
-
-                $this->assertEquals($expectedValue, $value);
-            }
-        }
-    }
-
-    /**
      * Provides some test dates and the expectation
      *
      * @return array
@@ -62,6 +35,8 @@ class FRTest extends AbstractTest
             array('2014-11-01', null, array('name' => 'La Toussaint')),
             array('2014-11-11', null, array('name' => 'Armistice')),
             array('2014-12-25', null, array('name' => 'Noël')),
+            array('2014-12-26', FR::STATE_AM, array('name' => 'Saint Etienne')),
+            array('2014-04-18', FR::STATE_AM, array('name' => 'Vendredi Saint')),
         );
     }
 } 
