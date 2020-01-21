@@ -35,9 +35,11 @@ class DETest extends AbstractTest
             array('2016-10-31', DE::STATE_BB, array('name' => 'Reformationstag')),
             array('2017-10-31', DE::STATE_SH, array('name' => 'Reformationstag')),
             array('2017-10-31', DE::STATE_BB, array('name' => 'Reformationstag')),
-            array('2018-10-31', DE::STATE_SH, array('name' => 'Reformationstag')), 
+            array('2018-10-31', DE::STATE_SH, array('name' => 'Reformationstag')),
             array('2018-11-21', DE::STATE_BB, null),
             array('2018-11-21', DE::STATE_SN, array('name' => 'Buß- und Bettag')),
+            array('2020-05-08', DE::STATE_BE, array('name' => 'Tag der Befreiung')),
+            array('2021-05-08', DE::STATE_BE, array('states' => null)),
         );
     }
 }
