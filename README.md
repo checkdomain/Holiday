@@ -19,6 +19,7 @@ Checkdomain/Holiday is a small library to check if a specified date is a holiday
 - 🇳🇴  **NO** Norway
 - 🇵🇱  **PL** Poland
 - 🇵🇹  **PT** Portugal
+- 🇫🇷  **RE** Réunion
 - 🇷🇴  **RO** Romania
 - 🇸🇪  **SE** Sweden
 
