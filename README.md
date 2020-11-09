@@ -6,6 +6,7 @@ Checkdomain/Holiday is a small library to check if a specified date is a holiday
 ## Currently supported countries
 
 - 🇦🇹  **AT** Austria
+- 🇧🇪  **BE** Belgium
 - 🇧🇷  **BR** Brazil
 - 🇩🇪  **DE** Germany
 - 🇩🇰  **DK** Denmark
