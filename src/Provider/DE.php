@@ -79,7 +79,6 @@ class DE extends AbstractEaster
                 self::STATE_RP,
                 self::STATE_SL,
             )),
-
             // Variable dates
             $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
             $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', array(
@@ -112,6 +111,13 @@ class DE extends AbstractEaster
             // International Women's Day
             // @see https://de.wikipedia.org/wiki/Internationaler_Frauentag#Der_Frauentag_als_gesetzlicher_Feiertag
             $holidays['03-08'] = $this->createData('Internationaler Frauentag', array(
+                self::STATE_BE,
+            ));
+        }
+
+        if (2020 === $year) {
+            // https://de.wikipedia.org/wiki/Tag_der_Befreiung
+            $holidays['05-08'] = $this->createData('Tag der Befreiung', array(
                 self::STATE_BE,
             ));
         }
