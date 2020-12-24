@@ -40,6 +40,10 @@ class DETest extends AbstractTest
             array('2018-11-21', DE::STATE_SN, array('name' => 'Buß- und Bettag')),
             array('2020-05-08', DE::STATE_BE, array('name' => 'Tag der Befreiung')),
             array('2021-05-08', DE::STATE_BE, array('states' => null)),
+            array('2018-03-08', DE::STATE_BE, null),
+            array('2019-03-08', DE::STATE_BE, array('name' => 'Internationaler Frauentag')),
+            array('2021-03-08', DE::STATE_BE, array('name' => 'Internationaler Frauentag')),
+            array('2021-03-08', DE::STATE_BY, null),
         );
     }
 }
