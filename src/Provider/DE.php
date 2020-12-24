@@ -108,6 +108,14 @@ class DE extends AbstractEaster
             ))
         );
 
+        if (2019 <= $year) {
+            // International Women's Day
+            // @see https://de.wikipedia.org/wiki/Internationaler_Frauentag#Der_Frauentag_als_gesetzlicher_Feiertag
+            $holidays['03-08'] = $this->createData('Internationaler Frauentag', array(
+                self::STATE_BE,
+            ));
+        }
+
         return $holidays;
     }
 
