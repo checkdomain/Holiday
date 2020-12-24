@@ -57,18 +57,6 @@ class DE extends AbstractEaster
             );
         }
 
-        /**
-         * https://de.wikipedia.org/wiki/Tag_der_Befreiung
-         *
-         * A holiday in Berlin only at 05-08-2020
-         */
-        $tagDerBefreiungStates = null;
-        if (2020 === $year) {
-            $tagDerBefreiungStates = array(
-                self::STATE_BE,
-            );
-        }
-
         $holidays = array(
             // Fixed dates
             '01-01' => $this->createData('Neujahr'),
@@ -91,8 +79,6 @@ class DE extends AbstractEaster
                 self::STATE_RP,
                 self::STATE_SL,
             )),
-           '05-08' => $this->createData('Tag der Befreiung', $tagDerBefreiungStates),
-
             // Variable dates
             $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
             $easter['easterSunday']->format(self::DATE_FORMAT)    => $this->createData('Ostersonntag', array(
@@ -125,6 +111,13 @@ class DE extends AbstractEaster
             // International Women's Day
             // @see https://de.wikipedia.org/wiki/Internationaler_Frauentag#Der_Frauentag_als_gesetzlicher_Feiertag
             $holidays['03-08'] = $this->createData('Internationaler Frauentag', array(
+                self::STATE_BE,
+            ));
+        }
+
+        if (2020 === $year) {
+            // https://de.wikipedia.org/wiki/Tag_der_Befreiung
+            $holidays['05-08'] = $this->createData('Tag der Befreiung', array(
                 self::STATE_BE,
             ));
         }
