@@ -79,11 +79,6 @@ class DE extends AbstractEaster
                 self::STATE_RP,
                 self::STATE_SL,
             )),
-            // International Women's Day
-            // @see https://de.wikipedia.org/wiki/Internationaler_Frauentag#Der_Frauentag_als_gesetzlicher_Feiertag
-            '03-08' => $this->createData('Internationaler Frauentag', array(
-                self::STATE_BE,
-            )),
 
             // Variable dates
             $easter['goodFriday']->format(self::DATE_FORMAT)      => $this->createData('Karfreitag'),
@@ -112,6 +107,14 @@ class DE extends AbstractEaster
                 self::STATE_SN
             ))
         );
+
+        if (2019 <= $year) {
+            // International Women's Day
+            // @see https://de.wikipedia.org/wiki/Internationaler_Frauentag#Der_Frauentag_als_gesetzlicher_Feiertag
+            $holidays['03-08'] = $this->createData('Internationaler Frauentag', array(
+                self::STATE_BE,
+            ));
+        }
 
         return $holidays;
     }
