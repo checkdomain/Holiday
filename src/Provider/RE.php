@@ -19,6 +19,11 @@ class RE extends FR
     {
         // sames rules as France
         $holidays = parent::getHolidaysByYear($year);
+
+        // remove holidays for specific states
+        foreach($holidays as $date => $holiday) {
+            if (isset($holiday['states']) && $holiday['states']) unset($holidays[$date]);
+        }
         // but an additional date
         $holidays['12-20'] = $this->createData('Abolition de l\'Esclavage');
 
