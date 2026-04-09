@@ -85,7 +85,7 @@ abstract class AbstractProvider implements ProviderInterface
      *
      * @return array
      */
-    protected function createData($name, array $states = null)
+    protected function createData($name, ?array $states = null)
     {
         return array(
             'name'     => $name,
