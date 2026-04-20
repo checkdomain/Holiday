@@ -112,6 +112,7 @@ class DE extends AbstractEaster
             // @see https://de.wikipedia.org/wiki/Internationaler_Frauentag#Der_Frauentag_als_gesetzlicher_Feiertag
             $holidays['03-08'] = $this->createData('Internationaler Frauentag', array(
                 self::STATE_BE,
+                self::STATE_MV,
             ));
         }
 
