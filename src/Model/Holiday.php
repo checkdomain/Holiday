@@ -30,7 +30,7 @@ class Holiday
      * @param \DateTime $date
      * @param array     $states
      */
-    public function __construct($name = null, \DateTime $date = null, array $states = null)
+    public function __construct($name = null, ?\DateTime $date = null, ?array $states = null)
     {
         $this->name     = $name;
         $this->date     = $date;
